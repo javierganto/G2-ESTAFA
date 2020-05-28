@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>Listado de usuarios</h1>
+		<a th:href="@{/usuarios/add}">Crear nuevo usuario</a>
+		<a th:href="@{/usuarios/login}">Iniciar Sesion</a>
+		<table>
+			<thead>
+				<tr><td>Nombre</td><td>Apellidos</td><td>Nick</td><td></td></tr>
+			</thead>
+			<tbody>
+			<tr th:each="p : ${ListaUsuarios}">
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.apellidos}"></td>
+				<td th:text="${p.nick}"></td>
+				<td> <a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}">Ver</a> <a th:href="@{/usuarios/edit/{nick}(nick=${p.nick})}">Editar</a> <a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}">Borrar</a>
+			</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
