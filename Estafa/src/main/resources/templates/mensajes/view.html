@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html align="center">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Lista de Usuarios</title>
+	</head>
+	<body  background="https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg">
+		
+	<font color="white">
+	<FONT SIZE=15>
+		<h1 th:text="${usuario}"></h1>
+		</font>
+		<FONT SIZE=5>
+			<div><br><br><br><br><br><br><br>
+				<label for="nombre">Nombre</label>
+				<span th:text="${usuario.nombre}"></span>
+			</div>
+			<div>
+				<label for="apellidos">Apellidos</label>
+				<span th:text="${usuario.apellidos}"></span>
+			</div>
+			<div>
+				<label for="nick">Nick</label>
+				<span th:text="${usuario.nick}"></span>
+			</div>
+			<div>
+				<label  for="nacimiento">Fecha de nacimiento</label>
+				<span th:text="${#dates.format(usuario.nacimiento, 'dd-MM-yyyy')}"></span>
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<span th:text="${usuario.email}"></span>
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<span th:text="${usuario.password}"></span>
+			</div>
+			<div>
+				<label for="valoracion">Valoracion</label>
+				<span th:text="${usuario.valoracion}"></span>
+			</div>
+			<div>
+				<span>Mensajes</span>
+			</div>
+			</br>
+			</font>
+			</font>
+			
+	</body>
+</html>

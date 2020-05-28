@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Lista de Usuarios</title>
+	</head>
+	<body>
+		<div th:switch="${usuario.nick}">
+			<h1 th:case="null">Nuevo Usuario</h1>
+			<h1 th:case="*">Editando Usuario</h1>
+		</div>
+		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
+			<input type="hidden" nick="nick" th:field="*{nick}">
+			<div>
+				<label for="nombre">Nombre</label>
+				<input type="text" nick="nombre" th:field="*{nombre}">
+			</div>
+			<div>
+				<label for="apellidos">Apellidos</label>
+				<input type="text" nick="apellidos" th:field="*{apellidos}">
+			</div>
+			<div>
+				<label for="nick">Nick</label>
+				<input type="text" nick="nick" th:field="*{nick}">
+			</div>
+			<div>
+				<label for="nacimiento">Fecha de nacimiento</label>
+				<input type="date" nick="nacimiento" th:field="*{nacimiento}">
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input type="text" nick="email" th:field="*{email}">
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input type="text" nick="password" th:field="*{password}">
+			</div>
+			<div>
+				<label for="valoracion">Valoracion</label>
+				<input type="number" nick="valoracion" th:field="*{valoracion}">
+			</div>
+			<div>
+				<input type="submit" value="Enviar">
+			</div>
+		</form>
+	</body>
+</html>
