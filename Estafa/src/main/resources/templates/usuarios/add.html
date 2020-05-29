@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html align="center">
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>Lista de Usuarios</title>
 	</head>
-	<body>
+	<body background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
+	    <font color="002B87">
+	    <FONT SIZE=15>
 		<div th:switch="${usuario.nick}">
 			<h1 th:case="null">Nuevo Usuario</h1>
 			<h1 th:case="*">Editando Usuario</h1>
 		</div>
+		</FONT>
+		<FONT SIZE=6>
+		<br><br><br><br><br><br>
 		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
 			<input type="hidden" nick="nick" th:field="*{nick}">
 			<div>
@@ -42,6 +47,8 @@
 			<div>
 				<input type="submit" value="Enviar">
 			</div>
+			</FONT>
+			</font>
 		</form>
 	</body>
 </html>
