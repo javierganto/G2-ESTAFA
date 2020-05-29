@@ -30,10 +30,13 @@ public class UsuarioService {
 		return usuarioRepository.getOne(nick);
 	}
 	
-	/*public void comprobar(String nick, String pas) {
-		 usuarioRepository.existsById(nick);
-		 usuarioRepository.equals(pas);
-	}*/
+	
+	public Usuario comprobar(String nick, String pas) {
+        Usuario usuario = usuarioRepository.getOne(nick);
+        if (usuario.getPassword().equals(pas))
+            return usuario;
+        return null;
+   }
 	
 	
 }
