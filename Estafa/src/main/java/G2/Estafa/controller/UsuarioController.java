@@ -33,16 +33,18 @@ public class UsuarioController {
 		model.addAttribute("usuario", new Usuario());
 		return "usuarios/add";
 	}
-	/*@RequestMapping("/usuarios/login")
+	@RequestMapping("/usuarios/login")
     public String loginusuarios(String nick, String pas) {
         usuarioservice.comprobar(nick,pas);
         return "usuarios/login";
     }
+	/*
     @PostMapping("/usuarios/save")
     public String perfilusuario(Usuario u) {
         return "redirect:/view";
 
     }*/
+	
 	
 	
 	@PostMapping("/usuarios/save")
