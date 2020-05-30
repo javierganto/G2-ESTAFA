@@ -1,5 +1,6 @@
 package G2.Estafa.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import G2.Estafa.model.Moderador;
+import G2.Estafa.model.Usuario;
 import G2.Estafa.service.ModeradorService;
 
 public class ModeradorController {
@@ -23,7 +25,51 @@ public class ModeradorController {
 		
 		@RequestMapping("/moderadores")
 		public String listadomoderadores(Model model) {
-			List<Moderador> moderadores = moderadorservice.getAll();
+			List<Usuario> moderadores = new ArrayList<>();
+			Moderador p = new Moderador();
+			p.setNombre("Ricardo");
+			p.setApellidos("Lopez Bordoli");
+			p.setNick("awakate");
+			p.setEmail("ricardolobo2000@hotmail.com");
+			p.setPassword("awakate");
+			p.setValoracion(10);
+			moderadores.add(p);
+			
+			p = new Moderador();
+			p.setNombre("Javier");
+			p.setApellidos("Garcia Antolin");
+			p.setNick("javierganto");
+			p.setEmail("javierganto@gmail.com");
+			p.setPassword("javierganto");
+			p.setValoracion(10);
+			moderadores.add(p);
+			
+			p = new Moderador();
+			p.setNombre("David");
+			p.setApellidos("Lopez Bordoli");
+			p.setNick("awakate");
+			p.setEmail("ricardolobo2000@hotmail.com");
+			p.setPassword("awakate");
+			p.setValoracion(10);
+			moderadores.add(p);
+			
+			p = new Moderador();
+			p.setNombre("Ricardo");
+			p.setApellidos("Lopez Bordoli");
+			p.setNick("awakate");
+			p.setEmail("ricardolobo2000@hotmail.com");
+			p.setPassword("awakate");
+			p.setValoracion(10);
+			moderadores.add(p);
+			
+			p = new Moderador();
+			p.setNombre("Ricardo");
+			p.setApellidos("Lopez Bordoli");
+			p.setNick("awakate");
+			p.setEmail("ricardolobo2000@hotmail.com");
+			p.setPassword("awakate");
+			p.setValoracion(10);
+			moderadores.add(p);
 			
 			model.addAttribute("ListaModeradores", moderadores);
 			
