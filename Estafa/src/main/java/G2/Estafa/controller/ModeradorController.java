@@ -22,7 +22,7 @@ public class ModeradorController {
 		ModeradorService moderadorservice;
 		
 		@RequestMapping("/moderadores")
-		public String listadousuarios(Model model) {
+		public String listadomoderadores(Model model) {
 			List<Moderador> moderadores = moderadorservice.getAll();
 			
 			model.addAttribute("ListaModeradores", moderadores);
@@ -30,12 +30,12 @@ public class ModeradorController {
 			return "moderadores/index";
 		}
 		@RequestMapping("/moderadores/add")
-		public String addusuarios(Model model) {
+		public String addmoderadores(Model model) {
 			model.addAttribute("moderadores", new Moderador());
 			return "moderadores/add";
 		}
 		@RequestMapping("/moderadores/login")
-	    public String loginusuarios(String nick, String pas) {
+	    public String loginmoderadores(String nick, String pas) {
 	        moderadorservice.comprobar(nick,pas);
 	        return "moderadores/login";
 	    }
@@ -49,23 +49,23 @@ public class ModeradorController {
 		
 		
 		@PostMapping("/moderadores/save")
-		public String saveUsuario(Moderador m) {
+		public String savemoderadores(Moderador m) {
 			moderadorservice.save(m);
 			return "redirect:/moderador";
 		}
 		@RequestMapping("/moderadores/edit/{nick}")
-		public String editusuarios(@PathVariable("nick") String nick, Model model) {
+		public String editmoderadores(@PathVariable("nick") String nick, Model model) {
 			model.addAttribute("moderadores", moderadorservice.getById(nick));
 			return "moderadores/add";
 		}
 		
 		@RequestMapping("/moderadores/view/{nick}")
-		public String viewusuarios(@PathVariable("nick") String nick, Model model) {
+		public String viewmoderadores(@PathVariable("nick") String nick, Model model) {
 			model.addAttribute("moderadores", moderadorservice.getById(nick));
 			return "moderadores/view";
 		}
 		@RequestMapping("/moderadores/delete/{nick}")
-		public String deleteUsuarios(@PathVariable("nick") String nick) {
+		public String deletemoderadores(@PathVariable("nick") String nick) {
 			moderadorservice.delete(nick);
 			return "redirect:/moderadores";
 		}
