@@ -29,17 +29,7 @@ public class TiendaController {
 		model.addAttribute("tienda", new Tienda());
 		return "tiendas/add";
 	}
-	/*@RequestMapping("/Tienda/login")
-    public String loginusuarios(String nick, String pas) {
-      tiendaservice.comprobar(nick,pas);
-        return "tienda/login";
-    }*/
-	/*
-    @PostMapping("/usuarios/save")
-    public String perfilusuario(Usuario u) {
-        return "redirect:/view";
-
-    }*/
+	
 	
 	
 	
