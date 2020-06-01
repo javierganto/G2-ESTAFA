@@ -23,6 +23,7 @@ public class ModeradorController {
 		
 		@Autowired
 		ModeradorService moderadorservice;
+		List<Usuario> user;
 		
 		@RequestMapping("/moderadores")
 		public String listadomoderadores(Model model) {
@@ -107,7 +108,11 @@ public class ModeradorController {
 			moderadorservice.delete(nick);
 			return "redirect:/moderadores";
 		}
-
+		@RequestMapping("/moderadores/delete/usuarios")
+		public String banearUsuario(Usuario u) {
+			moderadorservice.delete(u.getNick());
+			return "redirect:/moderadores";
+		}
 	}
 
 
