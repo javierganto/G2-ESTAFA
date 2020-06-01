@@ -1,5 +1,6 @@
 package G2.Estafa.controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,11 +76,6 @@ public class ModeradorController {
 			
 			return "moderadores/index";
 		}
-		@RequestMapping("/moderadores/add")
-		public String addmoderadores(Model model) {
-			model.addAttribute("moderadores", new Moderador());
-			return "moderadores/add";
-		}
 		@RequestMapping("/moderadores/login")
 	    public String loginmoderadores(String nick, String pas) {
 	        moderadorservice.comprobar(nick,pas);
@@ -94,11 +90,7 @@ public class ModeradorController {
 		
 		
 		
-		@PostMapping("/moderadores/save")
-		public String savemoderadores(Moderador m) {
-			moderadorservice.save(m);
-			return "redirect:/moderador";
-		}
+		
 		@RequestMapping("/moderadores/edit/{nick}")
 		public String editmoderadores(@PathVariable("nick") String nick, Model model) {
 			model.addAttribute("moderadores", moderadorservice.getById(nick));
