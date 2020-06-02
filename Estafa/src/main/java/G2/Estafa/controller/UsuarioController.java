@@ -23,6 +23,14 @@ public class UsuarioController {
 	UsuarioService usuarioservice;
 	
 	
+	@RequestMapping("/usuarios")
+	public String listadomoderadores(Model model) {
+		List<Usuario> usuarios = usuarioservice.getAll();
+		
+		model.addAttribute("ListaUsuarios", usuarios);
+		
+		return "usuarios/index";
+	}
 	@RequestMapping("/usuarios/add")
 	public String addusuarios(Model model) {
 		model.addAttribute("usuario", new Usuario());
@@ -67,7 +75,7 @@ public class UsuarioController {
 	@RequestMapping("/usuarios/delete/{nick}")
 	public String deleteUsuarios(@PathVariable("nick") String nick) {
 		usuarioservice.delete(nick);
-		return "redirect:/usuarios";
+		return "redirect:/moderadores";
 	}
 
 }
