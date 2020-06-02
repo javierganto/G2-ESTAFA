@@ -28,53 +28,9 @@ public class ModeradorController {
 	
 	@RequestMapping("/moderadores")
 	public String listadomoderadores(Model model) {
-		List<Usuario> moderadores = new ArrayList<>();
-		Moderador p = new Moderador();
-		p.setNombre("Ricardo");
-		p.setApellidos("Lopez Bordoli");
-		p.setNick("awakate");
-		p.setEmail("ricardolobo2000@hotmail.com");
-		p.setPassword("awakate");
-		p.setValoracion(10);
-		moderadores.add(p);
+		List<Usuario> mods = usuarioservice.getAll();
 		
-		p = new Moderador();
-		p.setNombre("Javier");
-		p.setApellidos("Garcia Antolin");
-		p.setNick("javierganto");
-		p.setEmail("javierganto@gmail.com");
-		p.setPassword("javierganto");
-		p.setValoracion(10);
-		moderadores.add(p);
-		
-		p = new Moderador();
-		p.setNombre("David");
-		p.setApellidos("Lopez Bordoli");
-		p.setNick("awakate");
-		p.setEmail("ricardolobo2000@hotmail.com");
-		p.setPassword("awakate");
-		p.setValoracion(10);
-		moderadores.add(p);
-		
-		p = new Moderador();
-		p.setNombre("Ricardo");
-		p.setApellidos("Lopez Bordoli");
-		p.setNick("awakate");
-		p.setEmail("ricardolobo2000@hotmail.com");
-		p.setPassword("awakate");
-		p.setValoracion(10);
-		moderadores.add(p);
-		
-		p = new Moderador();
-		p.setNombre("Ricardo");
-		p.setApellidos("Lopez Bordoli");
-		p.setNick("awakate");
-		p.setEmail("ricardolobo2000@hotmail.com");
-		p.setPassword("awakate");
-		p.setValoracion(10);
-		moderadores.add(p);
-		
-		model.addAttribute("ListaModeradores", moderadores);
+		model.addAttribute("ListaModeradores", mods);
 		
 		return "moderadores/index";
 	}
@@ -118,14 +74,7 @@ public class ModeradorController {
 		usuarioservice.delete(u.getNick());
 		return "redirect:/moderadores";
 	}
-	@RequestMapping("/usuarios")
-	public String listadousuarios(Model model) {
-		List<Usuario> usuarios = usuarioservice.getAll();
-		
-		model.addAttribute("ListaUsuarios", usuarios);
-		
-		return "usuarios/index";
-	}
+	
 
 
 }
