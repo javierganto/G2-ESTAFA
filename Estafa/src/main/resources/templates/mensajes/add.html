@@ -5,11 +5,8 @@
 	<title>Lista de Usuarios</title>
 	</head>
 	<body>
-		<div th:switch="${usuario.nick}">
-			<h1 th:case="null">Nuevo Usuario</h1>
-			<h1 th:case="*">Editando Usuario</h1>
-		</div>
-		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
+		
+		<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
 			<input type="hidden" nick="nick" th:field="*{nick}">
 			<div>
 				<label for="nombre">Nombre</label>
