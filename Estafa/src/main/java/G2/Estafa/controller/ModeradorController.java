@@ -115,8 +115,16 @@ public class ModeradorController {
 	}
 	@RequestMapping("/moderadores/delete/usuarios")
 	public String banearUsuario(Usuario u) {
-		moderadorservice.delete(u.getNick());
+		usuarioservice.delete(u.getNick());
 		return "redirect:/moderadores";
+	}
+	@RequestMapping("/usuarios")
+	public String listadousuarios(Model model) {
+		List<Usuario> usuarios = usuarioservice.getAll();
+		
+		model.addAttribute("ListaUsuarios", usuarios);
+		
+		return "usuarios/index";
 	}
 
 
