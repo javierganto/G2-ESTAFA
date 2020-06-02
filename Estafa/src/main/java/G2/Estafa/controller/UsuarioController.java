@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import G2.Estafa.model.Usuario;
 import G2.Estafa.service.UsuarioService;
 
@@ -34,10 +36,16 @@ public class UsuarioController {
 		return "usuarios/add";
 	}
 	@RequestMapping("/usuarios/login")
-    public String loginusuarios(String nick, String pas) {
-        usuarioservice.comprobar(nick,pas);
+    public String loginusuarios() {
+        
         return "usuarios/login";
     }
+	@PostMapping("/usuarios/conectar")
+	public String comprobar(@RequestParam("nick") String nick, @RequestParam("password") String pas) {
+		if (usuarioservice.comprobar(nick, pas)!=null)
+			return "redirect:/usuarios/view/"+nick;
+		return "redirect:/usuarios/login";
+	}
 	/*
     @PostMapping("/usuarios/save")
     public String perfilusuario(Usuario u) {

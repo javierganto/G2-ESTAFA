@@ -15,7 +15,7 @@
 		<FONT SIZE=6>
 		<br><br><br><br><br><br>
 		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
-			<input type="hidden" nick="nick" th:field="*{nick}">
+			<input th:if="*{nick}" type="hidden" nick="nick" th:field="*{nick}">
 			<div>
 				<label for="nombre">Nombre</label>
 				<input type="text" nick="nombre" th:field="*{nombre}">
@@ -24,7 +24,7 @@
 				<label for="apellidos">Apellidos</label>
 				<input type="text" nick="apellidos" th:field="*{apellidos}">
 			</div>
-			<div>
+			<div th:unless= "*{nick}">
 				<label for="nick">Nick</label>
 				<input type="text" nick="nick" th:field="*{nick}">
 			</div>

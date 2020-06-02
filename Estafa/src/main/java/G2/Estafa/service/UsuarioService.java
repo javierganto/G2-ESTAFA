@@ -32,10 +32,15 @@ public class UsuarioService {
 	
 	
 	public Usuario comprobar(String nick, String pas) {
-        Usuario usuario = usuarioRepository.getOne(nick);
-        if (usuario.getPassword().equals(pas))
-            return usuario;
-        return null;
+		try {
+			Usuario usuario = usuarioRepository.getOne(nick);
+	        if (usuario.getPassword().equals(pas))
+	            return usuario;
+		}
+        catch (Exception e) {
+            
+        }
+		return null;
    }
 	
 	
