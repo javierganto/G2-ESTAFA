@@ -22,14 +22,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioService usuarioservice;
 	
-	@RequestMapping("/usuarios")
-	public String listadousuarios(Model model) {
-		List<Usuario> usuarios = usuarioservice.getAll();
-		
-		model.addAttribute("ListaUsuarios", usuarios);
-		
-		return "usuarios/index";
-	}
+	
 	@RequestMapping("/usuarios/add")
 	public String addusuarios(Model model) {
 		model.addAttribute("usuario", new Usuario());
