@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import G2.Estafa.model.Mensaje;
+import G2.Estafa.model.Usuario;
 import G2.Estafa.service.MensajeService;
 
 
@@ -45,5 +46,13 @@ public class MensajeController {
 	public String deleteUsuarios(@PathVariable("autor") String autor) {
 		mensajeservice.delete(autor);
 		return "redirect:/usuarios";
+	}
+	@RequestMapping("/usuarios")
+	public String listadomensajes(Model model) {
+		List<Mensaje> mensajes = mensajeservice.getAll();
+		
+		model.addAttribute("ListaMensajes", mensajes);
+		
+		return "mensajes/index";
 	}
 }
