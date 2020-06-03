@@ -18,7 +18,6 @@ public class MensajeController {
 	@Autowired
 	MensajeService mensajeservice;
 	
-	@RequestMapping("/mensajes/"/*{nick}*/)
 	public String listadousuarios(Model model) {
 		List<Mensaje> mensaje = mensajeservice.getAll();
 		
