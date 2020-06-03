@@ -1,14 +1,15 @@
 package G2.Estafa.model;
 
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Mensaje {
 	@Id
-	private String nick;
+	@GeneratedValue
+	private int id;
 	private String titulo;
 	private String contenido;
 	private String autor;
