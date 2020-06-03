@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>Listado de mensajes</h1>
+		<br><br>
+		<table>
+			<thead>
+				<tr><td>Autor</td><td>Titulo</td><td></td></tr>
+			</thead>
+			<tbody>
+			<tr th:each="p : ${ListaMensajes}">
+				<td th:text="${p.nick}"></td>
+				<td th:text="${p.titulo}"></td>
+				<td> <a th:href="@{/mensajes/view/{nick}(nick=${p.nick})}">Ver</a> <a th:href="@{/mensajes/edit/{nick}(nick=${p.nick})}">Editar</a> <a th:href="@{/mensajes/delete/{nick}(nick=${p.nick})}">Borrar</a>
+			</tr>
+			</tbody>
+		</table>
+		</br>
+	</body>
+</html>
