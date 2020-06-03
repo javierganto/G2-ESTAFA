@@ -26,18 +26,18 @@ public class MensajeController {
 	@Autowired
 	UsuarioService usuarioservice;
 	
-	@RequestMapping("/mensajes/")
-	public String listadousuarios(Model model) {
+	@RequestMapping("/mensajes")
+	public String listadomensajes(Model model) {
 		List<Mensaje> mensaje = mensajeservice.getAll();
 		
-		model.addAttribute("ListaMensajes", mensaje);
+		model.addAttribute("ListaMensajes",mensaje);
 		
-		return "mesajes/index";
+		return "mensajes/index";
 	}
 	@RequestMapping("/mensajes/add")
 	public String addmensajes(Model model) {
 		model.addAttribute("mensaje", new Mensaje());
-		model.addAttribute("listaUsuarios", usuarioservice.getAll());
+		model.addAttribute("listausuarios", usuarioservice.getAll());
 		model.addAttribute("listaTiendas", tiendaservice.getAll());
 		return "mensajes/add";
 	}
@@ -47,24 +47,17 @@ public class MensajeController {
 		return "redirect:/mensajes";
 	}
 	@RequestMapping("/mensajes/edit/{id}")
-	public String editusmensaje(@PathVariable("nick") String autor, Model model) {
+	public String editusmensaje(@PathVariable("id") String autor, Model model) {
 		model.addAttribute("usuario", mensajeservice.getById(autor));
 		model.addAttribute("listaUsuarios", usuarioservice.getAll());
 		model.addAttribute("listaTiendas", tiendaservice.getAll());
-		return "usuarios/add";
+		return "mensajes/add";
 	}
 	
 	@RequestMapping("/usuarios/delete/{nick}")
 	public String deletemensajes(@PathVariable("autor") String autor) {
 		mensajeservice.delete(autor);
-		return "redirect:/usuarios";
+		return "redirect:/mensajes";
 	}
-	@RequestMapping("/usuarios")
-	public String listadomensajes(Model model) {
-		List<Mensaje> mensajes = mensajeservice.getAll();
-		
-		model.addAttribute("ListaMensajes", mensajes);
-		
-		return "mensajes/index";
-	}
+	
 }
