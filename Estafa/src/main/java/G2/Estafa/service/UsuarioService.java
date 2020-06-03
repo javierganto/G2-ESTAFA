@@ -12,6 +12,7 @@ import G2.Estafa.repository.UsuarioRepository;
 public class UsuarioService {
 	
 	@Autowired
+	
 	UsuarioRepository usuarioRepository;
 	
 	public List<Usuario> getAll(){
