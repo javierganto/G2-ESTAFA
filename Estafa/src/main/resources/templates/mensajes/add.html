@@ -2,39 +2,35 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Lista de Usuarios</title>
+	<title>Crear Mensaje</title>
 	</head>
 	<body>
-		
+		<div th:switch="${mensaje.id}">
+			<h1 th:case="null">Nuevo Mensaje</h1>
+			<h1 th:case="*">Editando Mensaje</h1>
+		</div>
 		<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
-			<input type="hidden" nick="nick" th:field="*{nick}">
+			<input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
 			<div>
-				<label for="nombre">Nombre</label>
-				<input type="text" nick="nombre" th:field="*{nombre}">
+				<label for="contenido">Opinion</label>
+				<textarea id="contenido" th:field="*{contenido}">
 			</div>
 			<div>
-				<label for="apellidos">Apellidos</label>
-				<input type="text" nick="apellidos" th:field="*{apellidos}">
+				<label for="tienda">Tienda</label>
+				<select id="tienda" th:field=*{tienda}>
+					<option value="Seleccionar"></option>
+					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.id}" th:text="${tienda.nombre}">
+					</option>
+				
+				</select>
 			</div>
 			<div>
-				<label for="nick">Nick</label>
-				<input type="text" nick="nick" th:field="*{nick}">
-			</div>
-			<div>
-				<label for="nacimiento">Fecha de nacimiento</label>
-				<input type="date" nick="nacimiento" th:field="*{nacimiento}">
-			</div>
-			<div>
-				<label for="email">Email</label>
-				<input type="text" nick="email" th:field="*{email}">
-			</div>
-			<div>
-				<label for="password">Password</label>
-				<input type="text" nick="password" th:field="*{password}">
-			</div>
-			<div>
-				<label for="valoracion">Valoracion</label>
-				<input type="number" nick="valoracion" th:field="*{valoracion}">
+				<label for="usuario">Usuario</label>
+				<select id="usuario" th:field=*{usuario}>
+					<option value="Seleccionar"></option>
+					<option th:each= "usuario : ${listaUsuarios}" th:value="${usuario.nick}" th:text="${usuario.nick}">
+					</option>
+				</select>
 			</div>
 			<div>
 				<input type="submit" value="Enviar">

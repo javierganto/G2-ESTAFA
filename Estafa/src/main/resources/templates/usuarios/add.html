@@ -14,6 +14,8 @@
 		</FONT>
 		<FONT SIZE=6>
 		<br><br><br><br><br><br>
+		<a th:href="@{/}">HOME</a>
+		<br>
 		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
 			<input th:if="*{nick}" type="hidden" nick="nick" th:field="*{nick}">
 			<div>

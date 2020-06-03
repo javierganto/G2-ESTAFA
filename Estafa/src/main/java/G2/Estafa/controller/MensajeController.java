@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import G2.Estafa.model.Mensaje;
 import G2.Estafa.model.Usuario;
 import G2.Estafa.service.MensajeService;
+import G2.Estafa.service.TiendaService;
+import G2.Estafa.service.UsuarioService;
 
 
 public class MensajeController {
@@ -18,7 +20,13 @@ public class MensajeController {
 	@Autowired
 	MensajeService mensajeservice;
 	
-	@RequestMapping("/mensajes/"/*{nick}*/)
+	@Autowired
+	TiendaService tiendaservice;
+	
+	@Autowired
+	UsuarioService usuarioservice;
+	
+	@RequestMapping("/mensajes/")
 	public String listadousuarios(Model model) {
 		List<Mensaje> mensaje = mensajeservice.getAll();
 		
@@ -26,24 +34,28 @@ public class MensajeController {
 		
 		return "mesajes/index";
 	}
-	@RequestMapping(/*/tiendas/{id}/*/"/mensajes/add")
-	public String addusuarios(Model model) {
+	@RequestMapping("/mensajes/add")
+	public String addmensajes(Model model) {
 		model.addAttribute("mensaje", new Mensaje());
-		return "usuarios/add";
+		model.addAttribute("listaUsuarios", usuarioservice.getAll());
+		model.addAttribute("listaTiendas", tiendaservice.getAll());
+		return "mensajes/add";
 	}
 	@PostMapping("/mensajes/save")
-	public String saveUsuario(Mensaje m) {
+	public String savemensaje(Mensaje m) {
 		mensajeservice.save(m);
 		return "redirect:/mensajes";
 	}
-	@RequestMapping("/mensajes/edit/{nick}")
-	public String editusuarios(@PathVariable("nick") String autor, Model model) {
+	@RequestMapping("/mensajes/edit/{id}")
+	public String editusmensaje(@PathVariable("nick") String autor, Model model) {
 		model.addAttribute("usuario", mensajeservice.getById(autor));
+		model.addAttribute("listaUsuarios", usuarioservice.getAll());
+		model.addAttribute("listaTiendas", tiendaservice.getAll());
 		return "usuarios/add";
 	}
 	
 	@RequestMapping("/usuarios/delete/{nick}")
-	public String deleteUsuarios(@PathVariable("autor") String autor) {
+	public String deletemensajes(@PathVariable("autor") String autor) {
 		mensajeservice.delete(autor);
 		return "redirect:/usuarios";
 	}
