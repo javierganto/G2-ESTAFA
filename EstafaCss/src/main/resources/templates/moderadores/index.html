@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html align="center">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Lista de Moderadores</title>
+	</head>
+	<body  background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
+		
+	<font color="002B87">
+	<FONT SIZE=15>
+	<h1>Usuarios</h1>
+	</FONT>
+	<FONT SIZE=6>
+	<br><br><br><br><br><br>
+	<table align="center">
+	
+	<thead>
+	<tr><td>Nick</td><td>Valoracion</td></tr>
+	</thead>
+	<tbody>
+	<tr th:each="p : ${ListaModeradores}">
+	<td th:text= "${p.nick}"></td>
+	<td th:text="${p.valoracion}"></td>
+	<td> <a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}">Ver</a>   <a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}">Banear</a>
+	</tr>
+	</tbody>
+	</table>
+	</FONT>
+	</font>
+	</body>
+</html>
