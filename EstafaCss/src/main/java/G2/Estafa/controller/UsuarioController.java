@@ -49,7 +49,7 @@ public class UsuarioController {
 	@PostMapping("/usuarios/conectar")
 	public String comprobar(@RequestParam("nick") String nick, @RequestParam("password") String pas) {
 		if (usuarioservice.comprobar(nick, pas)!=null)
-			return "redirect:/usuarios/view/"+nick;
+			return "redirect:/usuarios";
 		return "redirect:/usuarios/login";
 	}
 	/*
