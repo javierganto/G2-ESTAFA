@@ -41,6 +41,11 @@ public class UsuarioController {
         
         return "usuarios/login";
     }
+	@RequestMapping("/usuarios/contacta")
+    public String contactausuarios() {
+        
+        return "usuarios/contacta";
+    }
 	@PostMapping("/usuarios/conectar")
 	public String comprobar(@RequestParam("nick") String nick, @RequestParam("password") String pas) {
 		if (usuarioservice.comprobar(nick, pas)!=null)
