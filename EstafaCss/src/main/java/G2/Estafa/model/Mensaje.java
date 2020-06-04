@@ -1,9 +1,12 @@
 package G2.Estafa.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Mensaje {
@@ -23,6 +26,9 @@ public class Mensaje {
 	
 	@ManyToOne
 	private Moderador moderador;
+	
+	@OneToMany (mappedBy="mensaje")
+	private List<Respuesta> respuestas;
 	
 	public Mensaje() {
 		
