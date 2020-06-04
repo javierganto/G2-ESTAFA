@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Crear Respuesta</title>
+	</head>
+	<body>
+		<div th:switch="${respuesta.nick}">
+			<h1 th:case="null">Nuevo Respuesta</h1>
+			<h1 th:case="*">Editando Respuesta</h1>
+		</div>
+		</FONT>
+		<FONT SIZE=6>
+		<br><br><br><br><br><br>
+		<a th:href="@{/}">HOME</a>
+		<br>
+		<form th:action="@{/respuestas/save}" method="post" th:object="${respuesta}">
+			<input th:if="*{nick}" type="hidden" nick="nick" th:field="*{nick}">
+			<div>
+				<label for="contenido">Opinion</label>
+				<textarea id="contenido" th:field="*{contenido}">
+			</div>
+			<div>
+				<label for="tienda">Tienda</label>
+				<select id="tienda" th:field=*{tienda}>
+					<option value="Seleccionar"></option>
+					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.id}" th:text="${tienda.nombre}">
+					</option>
+				
+				</select>
+			</div>
+			<div>
+				<label for="usuario">Usuario</label>
+				<select id="usuario" th:field=*{usuario}>
+					<option value="Seleccionar"></option>
+					<option th:each= "usuario : ${listaUsuarios}" th:value="${usuario.nick}" th:text="${usuario.nick}">
+					</option>
+				</select>
+			</div>
+			<div>
+				<input type="submit" value="Enviar">
+			</div>
+		</form>
+	</body>
+</html>
