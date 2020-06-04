@@ -1,31 +1,79 @@
+
+
 <!DOCTYPE html>
-<html align="center">
-	<head>
-	<meta charset="ISO-8859-1">
-	<title>Lista de Moderadores</title>
-	</head>
-	<body  background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
-		
-	<font color="002B87">
-	<FONT SIZE=15>
-	<h1>Usuarios</h1>
-	</FONT>
-	<FONT SIZE=6>
-	<br><br><br><br><br><br>
-	<table align="center">
+<html lang="es">
+<head>
+    
+    <link rel="shortcut icon" href="favicon.jpg">
 	
-	<thead>
-	<tr><td>Nick</td><td>Valoracion</td></tr>
-	</thead>
+    
+    <!-- ******* cabezera ******* -->
+    <meta charset="UTF-8">
+    <title>ESTAFA</title>
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    
+ 
+    
+    </head>
+<body>
+  
+ <!-- ******* VIDEO FONDO ******* -->
+ <div class="contenido__video">
+     
+  <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
+   <source src="css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4">
+  </video>
+ </div>
+ 
+ <!-- Agrega tu código desde aquí -->
+ 
+      <header class="header2">
+        <div class="wrapper">
+        <a href="#"><img src=""></a>
+        <div class="logo">ESTAFA</div>
+    
+        <nav>
+             <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
+            
+            
+            <a th:href="@{/}">&nbsp TIENDAS &nbsp&nbsp</a>
+            
+            <a th:href="@{/}">&nbsp DENUNCIAR &nbsp&nbsp</a>
+            
+        
+        
+        </nav>
+        
+        
+        </header>
+    
+    <div class="wrapper">
+        <section>
+                
+            
+           <center>
+            
+            
 	<tbody>
-	<tr th:each="p : ${ListaModeradores}">
-	<td th:text= "${p.nick}"></td>
-	<td th:text="${p.valoracion}"></td>
-	<td> <a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}">Ver</a>   <a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}">Banear</a>
-	</tr>
+	<br><br><br><br>
+	
+	
+	<font size=6>
+	<font style="color:white";>
+	
+	
+	<a th:href="@{/moderadores/ListaUsuarios}" class="boton_4">ListaUsuarios</a><a th:href="@{/}" class="boton_4">ListaTiendas</a>
+	
+	
+	</font>
 	</tbody>
 	</table>
-	</FONT>
-	</font>
-	</body>
+            
+            </center>
+            
+        </br>   
+</body>
+    
+
 </html>
+
