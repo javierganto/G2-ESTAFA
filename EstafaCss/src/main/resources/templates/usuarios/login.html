@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     
-    <link rel="shortcut icon" href="favicon.jpg">
+    <link rel="shortcut icon" href="@{/css/favicon.jpg}">
 	
     
     <!-- ******* cabezera ******* -->
@@ -14,18 +15,28 @@
     
     </head>
 <body>
-  
+   
+    <form class="box" th:action="@{/usuarios/conectar}" method="POST">	
+        <h1>INICIAR SESIÓN</h1>
+        
+            <br>
+            <input type="text" name="nick" placeholder="Usuario">
+            <input type="password" name="password" placeholder="Contraseña">
+            <input type="submit" value="INICIAR SESIÓN">                           
+
+        </form>
  <!-- ******* VIDEO FONDO ******* -->
  <div class="contenido__video">
      
   <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
-   <source src="css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4">
+   <source th:src="@{/css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4}">
   </video>
  </div>
  
  <!-- Agrega tu código desde aquí -->
  
       <header class="header2">
+      
         <div class="wrapper">
         <a href="#"><img src=""></a>
         <div class="logo">ESTAFA</div>
@@ -46,32 +57,15 @@
       
     </header>
     
-    <div class="wrapper">
-        <section>
+    
                 
             
-           <center>
-            <img src="css/cuidado%20no%20te%20estafen.png" width="700px" height="150px">  
-            
-            
-            <form th:action="@{/usuarios/conectar}" method="POST">	
-			<div><br>
-				<label for="nick"><h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Nick &nbsp&nbsp</label>
-				<input type="text" name="nick" >
-			</div>
-			</br>
-			
-			<div>
-				<label for="password"><h1>&nbsp Password &nbsp&nbsp</label>
-				<input type="password" name="password" >
-			</div>
-			
-			<div>
-				<input type="submit" value="Enviar">
-			</div>
-            </FONT>
-           </center>
+           
 </body>
     
 
 </html>
+
+
+
+
