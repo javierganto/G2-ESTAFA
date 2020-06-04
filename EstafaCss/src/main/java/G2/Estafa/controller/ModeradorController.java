@@ -27,12 +27,18 @@ public class ModeradorController {
 	List<Usuario> user;
 	
 	@RequestMapping("/moderadores")
+	public String moderadores(Model model) {
+		
+		
+		return "moderadores/index";
+	}
+	@RequestMapping("/moderadores/ListaUsuarios")
 	public String listadomoderadores(Model model) {
 		List<Usuario> mods = usuarioservice.getAll();
 		
 		model.addAttribute("ListaModeradores", mods);
 		
-		return "moderadores/index";
+		return "moderadores/ListaUsuarios";
 	}
 	@RequestMapping("/moderadores/login")
     public String loginmoderadores(String nick, String pas) {
