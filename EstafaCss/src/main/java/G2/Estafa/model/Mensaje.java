@@ -13,7 +13,7 @@ public class Mensaje {
 	@Id
 	@GeneratedValue
 	private int id;
-	//private String titulo;
+	private String titulo;
 	private String contenido;
 	private String autor;
 	private boolean validez;
@@ -56,6 +56,33 @@ public class Mensaje {
 		return "Mensaje [ contenido=" + contenido + ", autor=" + autor + ", validez=" + validez
 				+ "]";
 	}
-	
+	public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    public Tienda getTienda() {
+        return tienda;
+    }
+    public void setTienda(Tienda tienda) {
+        this.tienda = tienda;
+    }
+    public Moderador getModerador() {
+        return moderador;
+    }
+    public void setModerador(Moderador moderador) {
+        this.moderador = moderador;
+    }
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
 	
 }
