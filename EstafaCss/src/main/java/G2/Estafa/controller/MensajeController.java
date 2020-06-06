@@ -55,7 +55,7 @@ public class MensajeController {
 		return "mensajes/add";
 	}
 	
-	@RequestMapping("/usuarios/delete/{nick}")
+	@RequestMapping("/mensajes/delete/{nick}")
 	public String deletemensajes(@PathVariable("autor") String autor) {
 		mensajeservice.delete(autor);
 		return "redirect:/mensajes";
