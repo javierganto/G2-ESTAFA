@@ -24,63 +24,46 @@ public class ModeradorController {
 	@Autowired
 	UsuarioService usuarioservice;
 	
-	List<Usuario> user;
+	
 	
 	@RequestMapping("/moderadores")
-	public String moderadores(Model model) {
-		
-		
-		return "moderadores/index";
-	}
-	@RequestMapping("/moderadores/ListaUsuarios")
-	public String listadomoderadores(Model model) {
-		List<Usuario> mods = usuarioservice.getAll();
-		
-		model.addAttribute("ListaModeradores", mods);
-		
-		return "moderadores/ListaUsuarios";
-	}
-	@RequestMapping("/moderadores/login")
-    public String loginmoderadores(String nick, String pas) {
-        moderadorservice.comprobar(nick,pas);
-        return "moderadores/login";
-    }
-	/*
-    @PostMapping("/usuarios/save")
-    public String perfilusuario(Usuario u) {
-        return "redirect:/view";
+    public String listadomoderadores(Model model) {
+        List<Usuario> mods = usuarioservice.getAll();
 
-    }*/
+        model.addAttribute("ListaModeradores", mods);
+
+        return "moderadores/index";
+    }
+	@RequestMapping("/moderadores/ListaUsuarios")
+    public String listadomoderadores1(Model model) {
+        List<Usuario> mods = usuarioservice.getAll();
+
+        model.addAttribute("ListaModeradores", mods);
+
+        return "moderadores/ListaUsuarios";
+    }
 	
-	
+
 	@RequestMapping("/moderadores/banear/{nick}")
 	public String banearusuario(@PathVariable("nick") String nick) {
 		usuarioservice.delete(nick);
 		return "moderadores";
 	}
+
 	
-	@RequestMapping("/moderadores/edit/{nick}")
-	public String editmoderadores(@PathVariable("nick") String nick, Model model) {
-		model.addAttribute("moderadores", moderadorservice.getById(nick));
-		return "moderadores/add";
-	}
 	
-	@RequestMapping("/moderadores/view/{nick}")
+	/*@RequestMapping("/moderadores/view/{nick}")
 	public String viewmoderadores(@PathVariable("nick") String nick, Model model) {
 		model.addAttribute("moderadores", moderadorservice.getById(nick));
 		return "moderadores/view";
 	}
-	@RequestMapping("/moderadores/delete/{nick}")
-	public String deletemoderadores(@PathVariable("nick") String nick) {
-		moderadorservice.delete(nick);
-		return "redirect:/moderadores";
-	}
+	
 	@RequestMapping("/moderadores/delete/usuarios")
 	public String banearUsuario(Usuario u) {
 		usuarioservice.delete(u.getNick());
 		return "redirect:/moderadores";
 	}
 	
-
+*/
 
 }
