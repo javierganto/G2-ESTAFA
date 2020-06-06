@@ -11,8 +11,16 @@
 		<h1 th:text="${usuario}"></h1>
 		</font>
 		<FONT SIZE=6>
-			<div><br><br><br><br><br><br>
-				
+			<br><br><br><br><br><br>
+				<div>
+				<label for="valoracion">Valoracion:</label>
+				<span th:text="${usuario.valoracion}"></span>
+			</div>
+			<div>
+				<label for="valoracion">Numero de Denuncias:</label>
+				<span th:text="${usuario.denuncias}"></span>
+			</div>
+			<div>
 				<label for="nombre">Nombre:</label>
 				<span th:text="${usuario.nombre}"></span>
 			</div>
@@ -36,10 +44,7 @@
 				<label for="password">Password:</label>
 				<span th:text="${usuario.password}"></span>
 			</div>
-			<div>
-				<label for="valoracion">Valoracion:</label>
-				<span th:text="${usuario.valoracion}"></span>
-			</div>
+			
 			<div>
 				<span>Mensajes:</span>
 			</div>
