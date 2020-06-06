@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import G2.Estafa.model.Mensaje;
 import G2.Estafa.model.Tienda;
 import G2.Estafa.service.TiendaService;
 //import G2.Estafa.service.UsuarioService;
@@ -54,9 +55,9 @@ public class TiendaController {
         model.addAttribute("mensaje", mensaje );
         return "tienda/view";
     }
-	@RequestMapping("/tiendas/delete/{nombre}")
-	public String deleteTiendas(@PathVariable("nombre") String nombre) {
-		tiendaservice.delete(nombre);
+	@RequestMapping("/tiendas/delete/{id}")
+	public String deleteTiendas(@PathVariable("id") Integer id) {
+		tiendaservice.delete(id);
 		return "redirect:/tiendas";
 	}
 
