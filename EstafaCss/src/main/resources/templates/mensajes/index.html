@@ -13,9 +13,13 @@
 			</thead>
 			<tbody>
 			<tr th:each="p : ${ListaMensajes}">
-				<td th:text="${p.nick}"></td>
+				
+				<td th:text="${p.autor}"></td>
+				
 				<td th:text="${p.titulo}"></td>
-				<td> <a th:href="@{/mensajes/view/{nick}(nick=${p.nick})}">Ver</a> <a th:href="@{/mensajes/edit/{nick}(nick=${p.nick})}">Editar</a> <a th:href="@{/mensajes/delete/{nick}(nick=${p.nick})}">Borrar</a>
+				
+				<td> <a th:href="@{/mensajes/view/{autor}(autor=${p.autor})}">Ver</a> <a th:href="@{/mensajes/edit/{autor}(autor=${p.autor})}">Editar</a> <a th:href="@{/mensajes/delete/{autor}(autor=${p.autor})}">Borrar</a>
+			
 			</tr>
 			</tbody>
 		</table>
