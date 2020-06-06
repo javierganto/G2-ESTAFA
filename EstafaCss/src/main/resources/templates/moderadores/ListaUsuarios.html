@@ -29,8 +29,7 @@
  
       <header class="header2">
         <div class="wrapper">
-        <a href="#"><img src=""></a>
-        <div class="logo">ESTAFA</div>
+        
     
         <nav>
              <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
@@ -43,7 +42,7 @@
         
         
         </nav>
-        
+        <div align="left"><img src="https://i.ibb.co/tY9Z9Fh/ESTAFALOGO.png" width="190" height="100"></div>
         
         </header>
     
@@ -56,22 +55,25 @@
             
 	<tbody>
 	<br><br><br><br>
-    <table align="center">
-
-    <thead>
-    <tr><td>Nick</td><td>Valoracion</td></tr>
-    </thead>
-    <tbody>
-    <tr th:each="p : ${ListaModeradores}">
-    <td th:text= "${p.nick}"></td>
-    <td th:text="${p.valoracion}"></td>
-    <td> <a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}">Ver</a>   <a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}">Banear</a>
-    </tr>
-    </tbody>
-    </table>
-    </FONT>
-    </font>
-   </br>   
+	<tr th:each="p : ${ListaModeradores}">
+	
+	<font size=6>
+	<font style="color:white";>
+	<br><br>
+	<td th:text= "${p.nick}"></td>
+	<td th:text="${p.valoracion}"></td>
+	<td>   
+	
+	<a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}" class="boton_4">Ver</a><a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}" class="boton_4">Banear</a>
+	
+	</tr>
+	</font>
+	</tbody>
+	</table>
+            
+            </center>
+            
+        </br>   
 </body>
     
 
