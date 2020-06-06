@@ -61,7 +61,7 @@
 	<font style="color:white";>
 	<br><br>
 	<td th:text= "${p.nick}"></td>
-	<td th:text="${p.valoracion}"></td>
+	
 	<td>   
 	
 	<a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}" class="boton_4">Ver</a><a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}" class="boton_4">Banear</a>
