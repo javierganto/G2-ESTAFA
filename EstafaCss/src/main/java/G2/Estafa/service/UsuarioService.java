@@ -43,6 +43,16 @@ public class UsuarioService {
         }
 		return null;
    }
+	public void denuncia(String nick){
+        try {
+        Usuario usuario = usuarioRepository.getOne(nick);
+        usuario.denunciar();
+        usuarioRepository.saveAndFlush(usuario);
+        }
+        catch(Exception e){
+
+        }
+    }
 	
 	
 }
