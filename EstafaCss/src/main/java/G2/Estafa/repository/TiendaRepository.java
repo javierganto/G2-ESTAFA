@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import G2.Estafa.model.Tienda;
 
 
-public interface TiendaRepository extends JpaRepository<Tienda, Integer> {
+public interface TiendaRepository extends JpaRepository<Tienda, String> {
 
 }
