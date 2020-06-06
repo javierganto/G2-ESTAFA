@@ -28,12 +28,16 @@ public class Usuario {
 	private String email;
 	private String password;
 	private double valoracion;
+	private int denuncias =0;
 	
 	@OneToMany(mappedBy = "usuario")
 	List<Mensaje> usuariomensajes;
 	
 	public Usuario(){
 		
+	}
+	public void denunciar() {
+		denuncias++;
 	}
 	public String getNombre() {
 		return nombre;
@@ -140,4 +144,10 @@ public class Usuario {
 	public void setValoracion(double valoracion) {
 		this.valoracion = valoracion;
 	}
+	public int getDenuncias() {
+        return denuncias;
+    }
+    public void setDenuncias(int denuncias) {
+        this.denuncias = denuncias;
+    }
 }
