@@ -22,12 +22,12 @@ public class TiendaService {
 		tiendaRepository.saveAndFlush(u);
 	}
 
-	public void delete(Integer id) {
-		tiendaRepository.deleteById(id);
+	public void delete(String nombre) {
+		tiendaRepository.deleteById(nombre);
 	}
 
-	public Tienda getById(Integer id) {
-		return tiendaRepository.getOne(id);
+	public Tienda getById(String nombre) {
+		return tiendaRepository.getOne(nombre);
 	}
 	
 	
