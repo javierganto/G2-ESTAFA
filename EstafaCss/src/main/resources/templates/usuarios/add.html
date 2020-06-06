@@ -1,56 +1,107 @@
+
+
+
 <!DOCTYPE html>
-<html align="center">
-	<head>
-	<meta charset="ISO-8859-1">
-	<title>Lista de Usuarios</title>
-	</head>
-	<body background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
-	    <font color="002B87">
-	    <FONT SIZE=15>
-		<div th:switch="${usuario.nick}">
-			<h1 th:case="null">Nuevo Usuario</h1>
-			<h1 th:case="*">Editando Usuario</h1>
-		</div>
-		</FONT>
-		<FONT SIZE=6>
-		<br><br><br><br><br><br>
-		<a th:href="@{/}">HOME</a>
-		<br>
-		<form th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
+<html lang="es" >
+<head>
+    
+    <link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+	
+    
+    <!-- ******* cabezera ******* -->
+    <meta charset="UTF-8">
+    <title>ESTAFA</title>
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+   </head> 
+    
+    <body>
+    
+    
+    
+     
+    
+    
+    
+    
+    <div class="contenido__video">
+     
+  <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
+   <source th:src="@{/css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4}">
+  </video>
+ </div>
+    
+    
+ 
+    
+     <header class="header2">
+      
+        <div class="wrapper">
+        
+        
+    
+        <nav>
+            <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
+            
+            <a th:href="@{/usuarios/contacta}">&nbsp CONTACTO &nbsp&nbsp</a>
+            
+            
+            
+            <a th:href="@{/usuarios/login}">&nbsp INICIAR SESION &nbsp&nbsp</a>
+            
+           </nav>
+            <div align="left"><img src="https://i.ibb.co/tY9Z9Fh/ESTAFALOGO.png" width="190" height="100"></div>
+            
+            
+            
+        
+      
+      
+    </header>
+    <br><br><br><br><br><br><br><br><br>
+    <FONT SIZE=6>
+     <form align="center" th:action="@{/usuarios/save}" method="post" th:object="${usuario}">
+     	
+     	
 			<input th:if="*{nick}" type="hidden" nick="nick" th:field="*{nick}">
 			<div>
-				<label for="nombre">Nombre</label>
+				<label style="color: white;" for="nombre">Nombre</label>
 				<input type="text" nick="nombre" th:field="*{nombre}">
 			</div>
 			<div>
-				<label for="apellidos">Apellidos</label>
+				<label style="color: white;" for="apellidos">Apellidos</label>
 				<input type="text" nick="apellidos" th:field="*{apellidos}">
 			</div>
 			<div th:unless= "*{nick}">
-				<label for="nick">Nick</label>
+				<label style="color: white;" for="nick">Nick</label>
 				<input type="text" nick="nick" th:field="*{nick}">
 			</div>
 			<div>
-				<label for="nacimiento">Fecha de nacimiento</label>
+				<label style="color: white;" for="nacimiento">Fecha de nacimiento</label>
 				<input type="date" nick="nacimiento" th:field="*{nacimiento}">
 			</div>
 			<div>
-				<label for="email">Email</label>
+				<label style="color: white;" for="email">Email</label>
 				<input type="text" nick="email" th:field="*{email}">
 			</div>
 			<div>
-				<label for="password">Password</label>
+				<label style="color: white;" for="password">Password</label>
 				<input type="text" nick="password" th:field="*{password}">
 			</div>
 			<div>
-				<label for="valoracion">Valoracion</label>
+				<label style="color: white;" for="valoracion">Valoracion</label>
 				<input type="number" nick="valoracion" th:field="*{valoracion}">
 			</div>
 			<div>
-				<input type="submit" value="Enviar">
+				<input  type="submit" value="Enviar">
 			</div>
 			</FONT>
 			</font>
 		</form>
-	</body>
+    	
+    
+    </body>
+	   
+	  
+	
 </html>
+
