@@ -34,6 +34,14 @@ public class ModeradorController {
 
         return "moderadores/index";
     }
+	@RequestMapping("/moderadores/ListaUsuarios")
+    public String listadomoderadores1(Model model) {
+        List<Usuario> mods = usuarioservice.getAll();
+
+        model.addAttribute("ListaModeradores", mods);
+
+        return "moderadores/ListaUsuarios";
+    }
 	
 
 	@RequestMapping("/moderadores/banear/{nick}")
@@ -41,6 +49,7 @@ public class ModeradorController {
 		usuarioservice.delete(nick);
 		return "moderadores";
 	}
+
 	
 	
 	/*@RequestMapping("/moderadores/view/{nick}")
