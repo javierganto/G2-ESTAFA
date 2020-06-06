@@ -33,7 +33,7 @@
 				<label for="usuario">Usuario</label>
 				<select id="usuario" th:field=*{usuario}>
 					<option value="Seleccionar"></option>
-					<option th:each= "usuario : ${listausuarios}" th:value="${usuario.nick}" th:text="${usuario.nick}">
+					<option th:each= "usuario : ${listausuarios}" th:value="${mensaje.autor}" th:text="${usuario.nick}">
 					</option>
 				</select>
 			</div>
