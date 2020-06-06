@@ -10,19 +10,19 @@
             <h1 th:case="">Editando Mensaje</h1>
         </div>
         <form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
-            <input th:if="{id}" type="hidden" nick="id" th:field="{id}">
+            <input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
 
             <div>
                 <label for="titulo">Titulo</label>
-                <input type="text" nick="titulo" th:field="{titulo}">
+                <input type="text" nick="titulo" th:field="*{titulo}">
             </div>
             <div>
                 <label for="contenido">Opinion</label>
-                <textarea id="contenido" th:field="{contenido}"></textarea>
+                <textarea id="contenido" th:field="*{contenido}"></textarea>
             </div>
             <div>
                 <label for="tienda">Tienda</label>
-                <select id="tienda" th:field={tienda}>
+                <select id="tienda" th:field=*{tienda}>
                     <option value="Seleccionar"></option>
                     <option th:each= "tienda : ${listaTiendas}" th:value="${tienda.id}" th:text="${tienda.nombre}">
                     </option>
