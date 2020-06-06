@@ -31,8 +31,27 @@ public class Mensaje {
 	public Mensaje() {
 		
 	}
-	//StructuredExpression imagen;
 	
+	
+	
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
 	public String getContenido() {
 		return contenido;
 	}
