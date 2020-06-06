@@ -43,13 +43,13 @@ public class ModeradorController {
 	}
 	
 	
-	@RequestMapping("/moderadores/view/{nick}")
+	/*@RequestMapping("/moderadores/view/{nick}")
 	public String viewmoderadores(@PathVariable("nick") String nick, Model model) {
 		model.addAttribute("moderadores", moderadorservice.getById(nick));
 		return "moderadores/view";
 	}
 	
-	/*@RequestMapping("/moderadores/delete/usuarios")
+	@RequestMapping("/moderadores/delete/usuarios")
 	public String banearUsuario(Usuario u) {
 		usuarioservice.delete(u.getNick());
 		return "redirect:/moderadores";
