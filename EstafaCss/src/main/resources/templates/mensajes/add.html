@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<div th:switch="${mensaje.id}">
+		<link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
 			<h1 th:case="null">Nuevo Mensaje</h1>
 			<h1 th:case="*">Editando Mensaje</h1>
 		</div>
