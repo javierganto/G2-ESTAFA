@@ -3,11 +3,11 @@ package G2.Estafa.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 
 import G2.Estafa.model.Respuesta;
 import G2.Estafa.repository.RespuestaRepository;
-
+@Service
 public class RespuestaService {
 	@Autowired
 	RespuestaRepository respuestaRepository;
