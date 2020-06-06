@@ -3,6 +3,7 @@ package G2.Estafa.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ import G2.Estafa.service.MensajeService;
 import G2.Estafa.service.TiendaService;
 import G2.Estafa.service.UsuarioService;
 
-
+@Controller
 public class MensajeController {
 
 	@Autowired
