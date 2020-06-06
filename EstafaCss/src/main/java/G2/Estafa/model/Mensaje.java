@@ -22,8 +22,7 @@ public class Mensaje {
 	@ManyToOne
 	private Tienda tienda;
 	
-	@ManyToOne
-	private Moderador moderador;
+	
 	
 	
 	public Mensaje() {
@@ -91,12 +90,8 @@ public class Mensaje {
     public void setTienda(Tienda tienda) {
         this.tienda = tienda;
     }
-    public Moderador getModerador() {
-        return moderador;
-    }
-    public void setModerador(Moderador moderador) {
-        this.moderador = moderador;
-    }
+   
+    
     public void setAutor(String autor) {
         this.autor = autor;
     }
