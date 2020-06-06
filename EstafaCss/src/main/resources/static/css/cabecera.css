@@ -1,0 +1,159 @@
+/* cabezera */
+
+*{
+    
+    margin:0;
+    padding: 0.05px;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background:#fffffa;
+    
+}
+
+header{
+    
+    width:100%;
+    overflow:hidden;
+    background:#252932;
+    margin-bottom:20px;
+    
+}
+
+
+.wrapper{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    overflow:hidden;
+}
+
+
+header nav{
+    margin-top: 15px;
+    float:right;
+    line-height:200px;
+    
+}
+
+header nav a{
+    display:inline-block;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 20px;
+    line-height:normal;
+    font-size:20px;
+    font-weight:bold;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+header nav a:hover{
+    background:#009EFF;
+    border-radius:50px;
+    
+}
+
+.header2{
+    position: fixed;
+    height:120px;
+    
+}
+
+.header2 .logo{
+    line-height:100px;
+    font-size:50px;
+}
+
+.header2 nav{
+    line-height:100px;
+    }
+
+.contenido{
+        padding-top:160px;
+        
+    
+}
+
+.contenido p {
+    margin-bottom:2em;
+    
+}
+
+
+
+ 
+    
+section{
+    
+    margin: 0;
+    padding: 35px;
+    background: #283747;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    
+    }
+
+footer{
+    margin-left:0px;
+    bottom: -60px;
+    width:380px;
+    padding:650px;
+    font-family:"arial";
+    font-size:20px;
+    position:relative;
+    width:100%;
+    padding:20px;
+    clear: both;
+    background:#FFF;
+    text-align:center;
+    color:#000;
+    
+    
+}
+
+
+
+
+
+
+/* FONDO VIDEO */
+.contenido__video{
+ background: #7DD174;
+ overflow: hidden;
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ z-index: -1;
+}
+
+
+.video{
+ position: absolute;
+ max-width: 300%;
+ width: 100%;
+}
+
+
+@media(max-width: 1920px){
+ .video{
+  width: 150%;
+ }
+}
+@media(max-width: 1080px){
+ .video{
+  width: 280%;
+ }
+}
+@media(max-width: 480px){
+ .video{ 
+  width: 300%;
+ }
+}
