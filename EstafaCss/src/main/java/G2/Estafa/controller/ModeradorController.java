@@ -24,27 +24,17 @@ public class ModeradorController {
 	@Autowired
 	UsuarioService usuarioservice;
 	
-	List<Usuario> user;
+	
 	
 	@RequestMapping("/moderadores")
-	public String moderadores(Model model) {
-		
-		
-		return "moderadores/index";
-	}
-	@RequestMapping("/moderadores/ListaUsuarios")
-	public String listadomoderadores(Model model) {
-		List<Usuario> mods = usuarioservice.getAll();
-		
-		model.addAttribute("ListaModeradores", mods);
-		
-		return "moderadores/ListaUsuarios";
-	}
-	@RequestMapping("/moderadores/login")
-    public String loginmoderadores(String nick, String pas) {
-        moderadorservice.comprobar(nick,pas);
-        return "moderadores/login";
+    public String listadomoderadores(Model model) {
+        List<Usuario> mods = usuarioservice.getAll();
+
+        model.addAttribute("ListaModeradores", mods);
+
+        return "moderadores/index";
     }
+	
 	/*
     @PostMapping("/usuarios/save")
     public String perfilusuario(Usuario u) {
