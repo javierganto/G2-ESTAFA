@@ -52,14 +52,21 @@ public class UsuarioController {
 			return "redirect:/usuarios";
 		return "redirect:/usuarios/login";
 	}
-	/*
-    @PostMapping("/usuarios/save")
-    public String perfilusuario(Usuario u) {
-        return "redirect:/view";
+	
+	@RequestMapping("/usuarios/denuncias")
+    public String listadousuarios(Model model) {
+        List<Usuario> usa = usuarioservice.getAll();
 
-    }*/
-	
-	
+        model.addAttribute("ListaUsuarios", usa);
+
+        return "usuarios/denuncias";
+    }
+	@RequestMapping("/usuarios/denun/{nick}")
+    public String comprobar(@PathVariable("nick") String nick) {
+        usuarioservice.denuncia(nick);
+
+        return "redirect:/usuarios/denuncias";
+    }
 	
 	@PostMapping("/usuarios/save")
 	public String saveUsuario(Usuario u) {
