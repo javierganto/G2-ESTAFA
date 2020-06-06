@@ -13,7 +13,7 @@ public class Mensaje {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String titulo;
+	//private String titulo;
 	private String contenido;
 	private String autor;
 	private boolean validez;
@@ -27,8 +27,6 @@ public class Mensaje {
 	@ManyToOne
 	private Moderador moderador;
 	
-	@OneToMany (mappedBy="mensaje")
-	private List<Respuesta> respuestas;
 	
 	public Mensaje() {
 		
