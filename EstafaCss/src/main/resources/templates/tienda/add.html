@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html align="center">
-	<head>
-	<meta charset="ISO-8859-1">
-	<title>Lista de Tiendas</title>
-	</head>
-	<body background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
-	    <font color="002B87">
-	    <FONT SIZE=15>
-		<div th:switch="${tiendas.id}">
-			<h1 th:case="null">Nueva tienda</h1>
-			<h1 th:case="*">Editando tienda</h1>
-		</div>
-		</FONT>
-		<FONT SIZE=6>
-		<br><br><br><br><br><br>
-		<a th:href="@{/}">HOME</a>
-		<br>
-		<form th:action="@{/tiendas/save}" method="post" th:object="${usuarios}">
-			<input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
-			<div>
-				<label for="nombre">Nombre</label>
-				<input type="text" nick="nombre" th:field="*{nombre}">
-			</div>
-			<div>
-				<label for="apellidos">Direccion</label>
-				<input type="text" nick="direccion" th:field="*{direccion}">
-			</div>
-			<div th:unless= "*{id}">
-				<label for="id">Id</label>
-				<input type="text" nick="id" th:field="*{id}">
-			</div>
-			<div>
-				<label for="paginaWeb">Fecha de nacimiento</label>
-				<input type="text" nick="paginaWeb" th:field="*{paginaWeb}">
-			</div>
-			<div>
-				<label for="contacto">Email</label>
-				<input type="text" nick="contacto" th:field="*{contacto}">
-			</div>
-			<div>
-				<label for="tipo_Producto">Producto</label>
-				<input type="text" nick="tipo_Producto" th:field="*{tipo_Producto}">
-			</div>
-			<div>
-				<label for="valoracion">Valoracion</label>
-				<input type="number" nick="valoracion" th:field="*{valoracion}">
-			</div>
-			<div>
-				<input type="submit" value="Enviar">
-			</div>
-			</FONT>
-			</font>
-		</form>
-	</body>
+    <head>
+    <meta charset="ISO-8859-1">
+    <title>Lista de Tiendas</title>
+    </head>
+    <body background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461%22%3E"><font color="002B87">
+        <FONT SIZE=15>
+        <div th:switch="${tienda.id}">
+            <h1 th:case="null">Nueva tienda</h1>
+            <h1 th:case="">Editando tienda</h1>
+        </div>
+        </FONT>
+        <FONT SIZE=6>
+        <br><br><br><br><br><br>
+
+        <form th:action="@{/tienda/save}" method="post" th:object="${tienda}">
+            <input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" nick="nombre" th:field="*{nombre}">
+            </div>
+            <div>
+                <label for="direccion">Direccion</label>
+                <input type="text" nick="direccion" th:field="*{direccion}">
+            </div>
+            <div>
+                <label for="paginaWeb">Pagina Web</label>
+                <input type="text" nick="paginaWeb" th:field="*{paginaWeb}">
+            </div>
+            <div>
+                <label for="tipo_Producto">Tipo producto</label>
+                <input type="text" nick="tipo_Producto" th:field="*{tipo_Producto}">
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </body>
 </html>
