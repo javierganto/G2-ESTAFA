@@ -14,7 +14,7 @@ public class Tienda {
  @GeneratedValue
 private Integer id;
 private String nombre;
-private double valoracion;
+private double valoracion=0;
 private String direccion;
 private String paginaWeb;
 private String tipo_Producto;
