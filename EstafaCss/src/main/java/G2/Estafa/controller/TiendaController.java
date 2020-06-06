@@ -18,32 +18,32 @@ public class TiendaController {
 	@Autowired
 	TiendaService tiendaservice;
 	
-	@RequestMapping("/tiendas")
+	@RequestMapping("/tienda")
 	public String listadotiendas(Model model) {
 		List<Tienda> tiendas = tiendaservice.getAll();
 		
 		model.addAttribute("ListaTiendas", tiendas);
 		
-		return "tiendas/index";
+		return "tienda/index";
 	}
-	@RequestMapping("/tiendas/add")
+	@RequestMapping("/tienda/add")
 	public String addTienda(Model model) {
 		model.addAttribute("tienda", new Tienda());
-		return "tiendas/add";
+		return "tienda/add";
 	}
 	
 	
 	
 	
-	@PostMapping("/tiendas/save")
+	@PostMapping("/tienda/save")
 	public String saveTienda(Tienda t) {
 		tiendaservice.save(t);
-		return "redirect:/tiendas";
+		return "redirect:/tienda";
 	}
-	@RequestMapping("/tiendas/edit/{id}")
+	@RequestMapping("/tienda/edit/{id}")
 	public String editTienda(@PathVariable("id") Integer id, Model model) {
 		model.addAttribute("Tienda", tiendaservice.getById(id));
-		return "tiendas/add";
+		return "tienda/add";
 	}
 	
 	@RequestMapping("/tienda/view/{id}")
@@ -55,10 +55,10 @@ public class TiendaController {
         model.addAttribute("mensaje", mensaje );
         return "tienda/view";
     }
-	@RequestMapping("/tiendas/delete/{id}")
+	@RequestMapping("/tienda/delete/{id}")
 	public String deleteTiendas(@PathVariable("id") Integer id) {
 		tiendaservice.delete(id);
-		return "redirect:/tiendas";
+		return "redirect:/tienda";
 	}
 
 }
