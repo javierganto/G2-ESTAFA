@@ -1,43 +1,103 @@
+
 <!DOCTYPE html>
-<html align="center">
-	<head>
-	<meta charset="ISO-8859-1">
-	
-	</head>
-	<body  background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
-		
-	<font color="002B87">
-	<FONT SIZE=15>
-				
-				<h1><label for="nombre">Tienda : </label>
+<html lang="es">
+<head>
+    
+    
+	<link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+    
+    <!-- ******* cabezera ******* -->
+    <meta charset="UTF-8">
+    <title>ESTAFA</title>
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    
+ 
+    
+    </head>
+<body>
+  
+ <!-- ******* VIDEO FONDO ******* -->
+<div class="contenido__video">
+     
+  <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
+   <source th:src="@{/css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4}">
+  </video>
+ </div>
+ 
+ 
+ <!-- Agrega tu código desde aquí -->
+ 
+      <header class="header2">
+        <div class="wrapper">
+       
+    
+        <nav>
+             <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
+            
+            <a th:href="@{/usuarios/contacta}">&nbsp CONTACTO &nbsp&nbsp</a>
+            
+            <a th:href="@{/tienda}">&nbsp TIENDAS &nbsp&nbsp</a>
+            
+            <a th:href="@{/usuarios/denuncias}">&nbsp DENUNCIAR &nbsp&nbsp</a>
+            
+        
+        
+        </nav>
+      <div align="left"><img src="https://i.ibb.co/tY9Z9Fh/ESTAFALOGO.png" width="190" height="100"></div>
+    </header>
+    
+    <div class="wrapper">
+        <section>
+                
+            <br><br><br><br>
+           <center>
+           <FONT SIZE=10 >
+            <h1 style="color: #5DADE2;"><label for="nombre">Tienda : </label>
 				<span th:text="${tienda.nombre}"></span>
 			</h1>
+            
+           
 		
-		</font>
-		<FONT SIZE=6>
-			<br><br><br><br><br><br>
-			<div>
+		
+		
+		
+		<FONT SIZE=6 style="color: white;">
+		
+			<br ><br><br>
+			<div >
 				<label for="direccion">Direccion:</label>
 				<span th:text="${tienda.direccion}"></span>
+				
 			</div>
+			<br>
 			<div>
 				<label for="paginaWeb">Pagina Web:</label>
 				<span th:text="${tienda.paginaWeb}"></span>
+				
 			</div>
+			<br>
 			<div>
 				<label for="tipo_Producto">Tipo Producto:</label>
 				<span th:text="${tienda.tipo_Producto}"></span>
+				
 			</div>
+			<br>
 			<div>
-				<label for="valoracion">Valoracion:</label>
-				<span th:text="${tienda.valoracion}"></span>
+				<label for="valoracion">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspValoracion:</label>
+				<span th:text="${tienda.valoracion}">&nbsp</span>
+				<a th:href="@{/tienda/pos/{nombre}(nombre=${tienda.nombre})}"class="boton_4"> &#x1F44D;</a>
+				<a th:href="@{/tienda/neg/{nombre}(nombre=${tienda.nombre})}"class="boton_4">&#x1F44E;</a>
 			</div>
+			<br>
 			<div>
 				<span>Mensajes:</span>
 			</div>
 			</br>
 			</font>
-			</font>
-			
-	</body>
+           
+           
+           </center>
+</body>
+    
+
 </html>
