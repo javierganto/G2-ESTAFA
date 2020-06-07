@@ -10,11 +10,11 @@ import javax.persistence.ManyToOne;
 public class Mensaje {
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	private String titulo;
 	private String contenido;
 	
-	private boolean validez;
+	private int validez = 0;
 	
 	@ManyToOne
 	private Usuario usuario;
@@ -43,9 +43,7 @@ public class Mensaje {
 
 
 
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 
 
@@ -57,12 +55,7 @@ public class Mensaje {
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
-	public boolean isValidez() {
-		return validez;
-	}
-	public void setValidez(boolean validez) {
-		this.validez = validez;
-	}
+	
 	
 	
 	@Override
@@ -89,8 +82,27 @@ public class Mensaje {
         this.tienda = tienda;
     }
    
-    
-   
+    public int getValidez() {
+		return validez;
+	}
 
+
+
+	public void setValidez(int validez) {
+		this.validez = validez;
+	}
+
+    public void neg() {
+		validez--;
+	}
+
+
+	public void pos() {
+		validez++;
+	}
+
+
+
+	
 	
 }
