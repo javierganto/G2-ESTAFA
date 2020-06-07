@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 
 @Entity
 public class Mensaje {
@@ -13,7 +13,7 @@ public class Mensaje {
 	private int id;
 	private String titulo;
 	private String contenido;
-	private String autor;
+	
 	private boolean validez;
 	
 	@ManyToOne
@@ -52,9 +52,7 @@ public class Mensaje {
 	public String getContenido() {
 		return contenido;
 	}
-	public String getAutor() {
-		return autor;
-	}
+	
 	
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
@@ -69,7 +67,7 @@ public class Mensaje {
 	
 	@Override
 	public String toString() {
-		return "Mensaje [ contenido=" + contenido + ", autor=" + autor + ", validez=" + validez
+		return "Mensaje [ contenido=" + contenido + ", validez=" + validez
 				+ "]";
 	}
 	public Integer getId() {
@@ -92,9 +90,7 @@ public class Mensaje {
     }
    
     
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+   
 
 	
 }
