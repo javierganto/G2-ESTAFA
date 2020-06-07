@@ -4,14 +4,14 @@
 <html lang="es">
 <head>
     
-    
+    <link rel="shortcut icon" href="@{favicon.jpg}">
 	
     
     <!-- ******* cabezera ******* -->
     <meta charset="UTF-8">
     <title>ESTAFA</title>
     <link th:href="@{/css/estilos.css}" rel="stylesheet" />
-    <link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+    
  
     
     </head>
@@ -35,9 +35,9 @@
              <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
             
             
-            <a th:href="@{/tienda}">&nbsp TIENDAS &nbsp&nbsp</a>
+            <a th:href="@{/}">&nbsp TIENDAS &nbsp&nbsp</a>
             
-            
+            <a th:href="@{/}">&nbsp DENUNCIAR &nbsp&nbsp</a>
             
         
         
@@ -61,7 +61,7 @@
 	<font style="color:white";>
 	<br><br>
 	<td th:text= "${p.nick}"></td>
-	
+	<td th:text="${p.valoracion}"></td>
 	<td>   
 	
 	<a th:href="@{/usuarios/view/{nick}(nick=${p.nick})}" class="boton_4">Ver</a><a th:href="@{/usuarios/delete/{nick}(nick=${p.nick})}" class="boton_4">Banear</a>
