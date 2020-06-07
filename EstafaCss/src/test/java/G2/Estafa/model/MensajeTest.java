@@ -1,5 +1,7 @@
 package G2.Estafa.model;
 
+
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,10 +31,7 @@ public class MensajeTest {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testHashCode() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testMensaje() {
@@ -53,37 +52,21 @@ public class MensajeTest {
 
 	@Test
 	void testGetAutor() {
-		assertTrue("Debe haber un nombre de autor", (mensaje.getUsuario()==null));
+		assertTrue("Debe haber un nombre de autor", (mensaje.getUsuario()!=null));
 	}
 
-	@Test
-	void testSetTitulo() {
-		fail("Not yet implemented");
-	}
+	
 
-	@Test
-	void testSetContenido() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testIsValidez() {
-		fail("Not yet implemented");
+		assertTrue("El mensaje es valido" ,mensaje.isValidez()==true);
 	}
 
-	@Test
-	void testSetValidez() {
-		fail("Not yet implemented");
-	}
+	
 
-	@Test
-	void testEqualsObject() {
-		fail("Not yet implemented");
-	}
 
-	@Test
-	void testToString() {
-		fail("Not yet implemented");
-	}
+	
 
 }
