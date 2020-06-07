@@ -53,7 +53,7 @@ public class MensajeTest {
 
 	@Test
 	void testGetAutor() {
-		assertTrue("Debe haber un nombre de autor", (mensaje.getAutor()==null));
+		assertTrue("Debe haber un nombre de autor", (mensaje.getUsuario()==null));
 	}
 
 	@Test
