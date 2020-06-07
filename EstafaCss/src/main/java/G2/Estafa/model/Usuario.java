@@ -27,7 +27,7 @@ public class Usuario {
 	private String apellidos;
 	private String email;
 	private String password;
-	private double valoracion;
+	private int valoracion = 0;
 	private int denuncias =0;
 	
 	@OneToMany(mappedBy = "usuario")
@@ -138,10 +138,10 @@ public class Usuario {
 	public String toString() {
 		return nick ;
 	}
-	public double getValoracion() {
+	public int getValoracion() {
 		return valoracion;
 	}
-	public void setValoracion(double valoracion) {
+	public void setValoracion(int valoracion) {
 		this.valoracion = valoracion;
 	}
 	public int getDenuncias() {
@@ -150,4 +150,19 @@ public class Usuario {
     public void setDenuncias(int denuncias) {
         this.denuncias = denuncias;
     }
+    public void neg() {
+		valoracion--;
+	}
+
+
+	public void pos() {
+		valoracion++;
+	}
+	public List<Mensaje> getUsuariomensajes() {
+		return usuariomensajes;
+	}
+	public void setUsuariomensajes(List<Mensaje> usuariomensajes) {
+		this.usuariomensajes = usuariomensajes;
+	}
+    
 }
