@@ -28,8 +28,8 @@ public class Mensaje {
 	
 	
 	
-	public Mensaje(String contenido) {
-		this.contenido=contenido;
+	public Mensaje() {
+		
 	}
 	
 	
