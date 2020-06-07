@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html align="center">
+
 	<head>
 	<meta charset="ISO-8859-1">
 
@@ -91,9 +91,11 @@
 				<span th:text="${mensaje.validez}">&nbsp</span>
 				<a th:href="@{/mensajes/pos/{id}(id=${mensaje.id})}"class="boton_4"> &#x1F44D;</a>
 				<a th:href="@{/mensajes/neg/{id}(id=${mensaje.id})}"class="boton_4">&#x1F44E;</a>
+				
 			</div>
+				
 			<br>
-			
+			<a th:href="@{/mensajes/edit/{id}(id=${mensaje.id})}"class="boton_4">Editar</a>
 			</br>
 			</font>
            
