@@ -125,6 +125,14 @@ public boolean equals(Object obj) {
 
 
 
+	public void neg() {
+		valoracion--;
+	}
+
+
+	public void pos() {
+		valoracion++;
+	}
 
 
 }
