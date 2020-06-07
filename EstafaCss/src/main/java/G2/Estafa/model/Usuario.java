@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
+import org.hibernate.annotations.CascadeType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -30,7 +30,7 @@ public class Usuario {
 	private int valoracion = 0;
 	private int denuncias =0;
 	
-	@OneToMany(mappedBy = "usuario")
+	@OneToMany(mappedBy = "usuario", cascade= {javax.persistence.CascadeType.REMOVE})
 	List<Mensaje> usuariomensajes;
 	
 	public Usuario(){
