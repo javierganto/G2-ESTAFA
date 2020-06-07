@@ -14,7 +14,7 @@ public class Tienda {
 private String nombre;
  
  
-private double valoracion=0;
+private int valoracion=0;
 private String direccion;
 private String paginaWeb;
 private String tipo_Producto;
@@ -35,10 +35,10 @@ public String getNombre() {
 public void setNombre(String nombre) {
 	this.nombre = nombre;
 }
-public double getValoracion() {
+public int getValoracion() {
 	return valoracion;
 }
-public void setValoracion(double valoracion) {
+public void setValoracion(int valoracion) {
 	this.valoracion = valoracion;
 }
 public String getDireccion() {
@@ -119,8 +119,7 @@ public boolean equals(Object obj) {
 	}
 	@Override
 	public String toString() {
-		return "Tienda [nombre=" + nombre + ", valoracion=" + valoracion + ", direccion=" + direccion + ", paginaWeb="
-			+ paginaWeb + ", tipo_Producto=" + tipo_Producto + ", contacto=" + contacto + "]";
+		return nombre;
 }
 
 
