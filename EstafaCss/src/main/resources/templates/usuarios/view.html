@@ -15,6 +15,8 @@
 				<div>
 				<label for="valoracion">Valoracion:</label>
 				<span th:text="${usuario.valoracion}"></span>
+				<a th:href="@{/usuarios/pos/{nick}(nick=${usuario.nick})}"class="boton_4"> &#x1F44D;</a>
+				<a th:href="@{/usuarios/neg/{nick}(nick=${usuario.nick})}"class="boton_4">&#x1F44E;</a>
 			</div>
 			<div>
 				<label for="valoracion">Numero de Denuncias:</label>
@@ -47,6 +49,11 @@
 			
 			<div>
 				<span>Mensajes:</span>
+				<ul>
+				<li th:each= "Mensaje : ${usuario.usuariomensajes}" th:text="${Mensaje}">
+					</li>
+					
+					</ul>
 			</div>
 			</br>
 			</font>
