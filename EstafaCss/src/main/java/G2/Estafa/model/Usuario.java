@@ -136,7 +136,7 @@ public class Usuario {
 	}
 	@Override
 	public String toString() {
-		return nick ;
+		return "Usuario" + ": " + nick ;
 	}
 	public double getValoracion() {
 		return valoracion;
