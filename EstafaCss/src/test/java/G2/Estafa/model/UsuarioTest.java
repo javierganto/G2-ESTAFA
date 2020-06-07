@@ -1,6 +1,9 @@
 package G2.Estafa.model;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.Date;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -31,41 +34,53 @@ class UsuarioTest {
 
 	@Test
 	void testGetNombre() {
-		assertTrue("El nombre no puede ser nulo", (usuario.getNombre()!=null));
+		String nombre = "Alejandro";
+		usuario.setNombre(nombre);
+		assertEquals("El nombre es "+nombre, usuario.getNombre(),nombre);
 	}
 
 
 	@Test
 	void testGetNacimiento() {
-		assertTrue("Fecha incorrecta", (usuario.getNacimiento()!=null));
+		Date nacimiento = new Date(12,04,2000);
+		usuario.setNacimiento(nacimiento);
+		assertEquals("La fecha de nacimiento es "+nacimiento,usuario.getNacimiento(),nacimiento);
 	}
 
 	
 
 	@Test
 	void testGetApellidos() {
-		assertTrue("El apellido no puede ser nulo", (usuario.getApellidos()!=null));
+		String apellidos = "Mozo";
+		usuario.setApellidos(apellidos);
+		assertEquals("El apellido es "+apellidos,usuario.getApellidos(),apellidos);
 	}
 
 	
 
 	@Test
 	void testGetNick() {
-		assertTrue("El nick no puede ser nulo", (usuario.getNick()!=null));
+		String nick = "amozo-uma";
+		usuario.setNick(nick);
+		assertEquals("El nick es "+nick,usuario.getNick(),nick);
 	}
 
 	
 
 	@Test
 	void testGetEmail() {
-		assertTrue("Email no valido", (usuario.getEmail()!=null));
+		String email = "amozo@gmail.com";
+		usuario.setEmail(email);
+		assertEquals("El email es "+email,usuario.getEmail(),email);
 	}
 
 	
 
 	@Test
 	void testGetPassword() {
-		assertTrue("Contraseña no valida", (usuario.getPassword()!=null));
+		String contraseña = "vivamitrabajo";
+		usuario.setPassword(contraseña);
+		assertEquals("La contraseña es "+contraseña,usuario.getPassword(),contraseña);
 	}
 
 	
@@ -74,7 +89,9 @@ class UsuarioTest {
 
 	@Test
 	void testGetValoracion() {
-		assertTrue("La valoracion no puede ser nula", (usuario.getValoracion()>=0));
+		int valoracion = 6;
+		usuario.setValoracion(valoracion);
+		assertEquals("La valoracion es "+valoracion,usuario.getValoracion(),valoracion);
 	}
 
 	
