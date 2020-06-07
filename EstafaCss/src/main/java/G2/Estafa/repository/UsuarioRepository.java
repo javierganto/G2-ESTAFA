@@ -6,4 +6,6 @@ import G2.Estafa.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, String>{
 
+	
+
 }
