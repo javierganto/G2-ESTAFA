@@ -59,7 +59,7 @@
            <table style="color: white;">
 			<thead style="color: #5DADE2;">
 				
-				<tr><td>Autor</td><td>Titulo</td><td></td></tr>
+				<tr><td>Autor</td><td>Titulo</td><td>Validez</td><td></td></tr>
 				
 			</thead>
 			
@@ -74,7 +74,9 @@
 				
 				<td th:text="${p.titulo}"></td>
 				
-				<td> <a th:href="@{/mensajes/view/{usuario}(usuario=${p.usuario})}"class="boton_4">Ver</a> <a th:href="@{/mensajes/edit/{usuario}(usuario=${p.usuario})}"class="boton_4">Editar</a> <a th:href="@{/mensajes/delete/{usuario}(usaurio=${p.usuario})}"class="boton_4">Borrar</a>
+				<td th:text="${p.validez}"></td>
+				
+				<td> <a th:href="@{/mensajes/view/{id}(id=${p.id})}"class="boton_4">Ver</a> <a th:href="@{/mensajes/delete/{id}(id=${p.id})}"class="boton_4">Borrar</a>
 				<br><br><br><br>
 			</tr>
 			</tbody>
