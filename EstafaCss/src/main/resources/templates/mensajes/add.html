@@ -5,12 +5,13 @@
 	<title>Crear Mensaje</title>
 	</head>
 	<body>
+	
 		<div th:switch="${mensaje.id}">
 			<h1 th:case="null">Nuevo Mensaje</h1>
 			<h1 th:case="*">Editando Mensaje</h1>
 		</div>
 		<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
-			<input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
+			<input th:if="*{id}" type="hidden" id="id" th:field="*{id}">
 			
 			<div>
 				<label for="titulo">Titulo</label>

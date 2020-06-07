@@ -1,50 +1,142 @@
 <!DOCTYPE html>
-<html align="center">
+
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Lista de Usuarios</title>
-	</head>
-	<body  background="https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg">
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    
+	<link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+    
+    <!-- ******* cabezera ******* -->
+    <meta charset="UTF-8">
+    <title>ESTAFA</title>
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    
+ 
+    
+    </head>
+<body>
+  
+ <!-- ******* VIDEO FONDO ******* -->
+<div class="contenido__video">
+     
+  <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
+   <source th:src="@{/css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4}">
+  </video>
+ </div>
+ 
+ 
+ <!-- Agrega tu código desde aquí -->
+ 
+      <header class="header2">
+        <div class="wrapper">
+       
+    
+        <nav>
+             <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
+            
+            <a th:href="@{/usuarios/contacta}">&nbsp CONTACTO &nbsp&nbsp</a>
+            
+            <a th:href="@{/tienda}">&nbsp TIENDAS &nbsp&nbsp</a>
+            
+            <a th:href="@{/usuarios/denuncias}">&nbsp DENUNCIAR &nbsp&nbsp</a>
+            
+        
+        
+        </nav>
+      <div align="left"><img src="https://i.ibb.co/tY9Z9Fh/ESTAFALOGO.png" width="190" height="100"></div>
+    </header>
+    
+    <div class="wrapper">
+        <section>
+                
+            <br><br><br><br>
+           <center>
+           <FONT SIZE=10 >
+            <h1 style="color: #5DADE2;"><label for="titulo">TITULO : </label>
+				<span th:text="${mensaje.titulo}"></span>
+			</h1>
+            
+           
 		
-	<font color="white">
-	<FONT SIZE=15>
-		<h1 th:text="${usuario}"></h1>
-		</font>
-		<FONT SIZE=5>
-			<div><br><br><br><br><br><br><br>
-				<label for="nombre">Nombre</label>
-				<span th:text="${usuario.nombre}"></span>
+		
+		
+		
+		<FONT SIZE=6 style="color: white;">
+		
+			<br ><br><br>
+			<div >
+				<label for="contenido">Contenido:</label>
+				<span th:text="${mensaje.contenido}"></span>
+				
+			</div>
+			<br>
+			<div>
+				<label for="usuario">Autor:</label>
+				<span th:text="${mensaje.usuario}"></span>
+				
+			</div>
+			<br>
+			<div>
+				<label for="tienda">Tienda:</label>
+				<span th:text="${mensaje.tienda}"></span>
+				
+			</div>
+			<br>
+			<div>
+				<label for="validez">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspValidez:</label>
+				<span th:text="${mensaje.validez}">&nbsp</span>
+				<a th:href="@{/mensajes/pos/{id}(id=${mensaje.id})}"class="boton_4"> &#x1F44D;</a>
+				<a th:href="@{/mensajes/neg/{id}(id=${mensaje.id})}"class="boton_4">&#x1F44E;</a>
+			</div>
+			<br>
+			<div>
+				<span>Mensajes:</span>
+				<div th:switch="${mensaje.id}">
+			
+		</div>
+		<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
+			<input th:if="*{id}" type="hidden" id="id" th:field="*{id}">
+			
+			<div>
+				<label for="titulo">Titulo</label>
+				<input type="text" nick="titulo" th:field="*{titulo}">
 			</div>
 			<div>
-				<label for="apellidos">Apellidos</label>
-				<span th:text="${usuario.apellidos}"></span>
+				<label for="contenido">Opinion</label>
+				<textarea id="contenido" th:field="*{contenido}"></textarea>
 			</div>
 			<div>
-				<label for="nick">Nick</label>
-				<span th:text="${usuario.nick}"></span>
+				<label for="tienda">Tienda</label>
+				<select id="tienda" th:field=*{tienda}>
+					<option value="Seleccionar"></option>
+					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.nombre}" th:text="${tienda.nombre}">
+					</option>
+				
+				</select>
 			</div>
 			<div>
-				<label  for="nacimiento">Fecha de nacimiento</label>
-				<span th:text="${#dates.format(usuario.nacimiento, 'dd-MM-yyyy')}"></span>
+				<label for="usuario">Usuario</label>
+				<select id="usuario" th:field=*{usuario}>
+					<option value="Seleccionar"></option>
+					<option th:each= "usuario : ${listausuarios}" th:value="${usuario.nick}" th:text="${usuario.nick}">
+					</option>
+				</select>
 			</div>
 			<div>
-				<label for="email">Email</label>
-				<span th:text="${usuario.email}"></span>
+				<input type="submit" value="Enviar">
 			</div>
-			<div>
-				<label for="password">Password</label>
-				<span th:text="${usuario.password}"></span>
-			</div>
-			<div>
-				<label for="valoracion">Valoracion</label>
-				<span th:text="${usuario.valoracion}"></span>
-			</div>
-			<div>
-				<span>Mensajes</span>
+		</form>
 			</div>
 			</br>
 			</font>
-			</font>
-			
-	</body>
+           
+           
+           </center>
+</body>
+    
+
 </html>
