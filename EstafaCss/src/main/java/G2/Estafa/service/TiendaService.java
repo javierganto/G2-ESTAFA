@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import G2.Estafa.model.Tienda;
+import G2.Estafa.model.Usuario;
 //import G2.Estafa.model.Usuario;
 import G2.Estafa.repository.TiendaRepository;
 //import G2.Estafa.repository.UsuarioRepository;
@@ -28,6 +29,29 @@ public class TiendaService {
 
 	public Tienda getById(String nombre) {
 		return tiendaRepository.getOne(nombre);
+	}
+
+	public void neg(String nombre) {
+		 try {
+		        Tienda tienda = tiendaRepository.getOne(nombre);
+		        tienda.neg();
+		        tiendaRepository.saveAndFlush(tienda);
+		        }
+		        catch(Exception e){
+
+		        }
+		
+	}
+	public void pos(String nombre) {
+		 try {
+		        Tienda tienda = tiendaRepository.getOne(nombre);
+		        tienda.pos();
+		        tiendaRepository.saveAndFlush(tienda);
+		        }
+		        catch(Exception e){
+
+		        }
+		
 	}
 	
 	
