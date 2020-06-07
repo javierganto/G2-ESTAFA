@@ -1,5 +1,6 @@
 package G2.Estafa.model;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class UsuarioTest {
+	private Usuario usuario;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -26,94 +28,57 @@ class UsuarioTest {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testHashCode() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testUsuario() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetNombre() {
-		fail("Not yet implemented");
+		assertTrue("El nombre no puede ser nulo", (usuario.getNombre()!=null));
 	}
 
-	@Test
-	void testSetNombre() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testGetNacimiento() {
-		fail("Not yet implemented");
+		assertTrue("Fecha incorrecta", (usuario.getNacimiento()!=null));
 	}
 
-	@Test
-	void testSetNacimiento() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetApellidos() {
-		fail("Not yet implemented");
+		assertTrue("El apellido no puede ser nulo", (usuario.getApellidos()!=null));
 	}
 
-	@Test
-	void testSetApellidos() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetNick() {
-		fail("Not yet implemented");
+		assertTrue("El nick no puede ser nulo", (usuario.getNick()!=null));
 	}
 
-	@Test
-	void testSetNick() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetEmail() {
-		fail("Not yet implemented");
+		assertTrue("Email no valido", (usuario.getEmail()!=null));
 	}
 
-	@Test
-	void testSetEmail() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetPassword() {
-		fail("Not yet implemented");
+		assertTrue("Contraseña no valida", (usuario.getPassword()!=null));
 	}
 
-	@Test
-	void testSetPassword() {
-		fail("Not yet implemented");
-	}
+	
 
-	@Test
-	void testEqualsObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testToString() {
-		fail("Not yet implemented");
-	}
+	
 
 	@Test
 	void testGetValoracion() {
-		fail("Not yet implemented");
+		assertTrue("La valoracion no puede ser nula", (usuario.getValoracion()>=0||usuario.getValoracion()<=10));
 	}
 
-	@Test
-	void testSetValoracion() {
-		fail("Not yet implemented");
-	}
+	
 
+	
 }
