@@ -31,6 +31,8 @@
 			<div>
 				<label for="valoracion">Valoracion:</label>
 				<span th:text="${tienda.valoracion}"></span>
+				<a th:href="@{/tienda/pos/{nombre}(nombre=${tienda.nombre})}"class="boton_4">&#x1F44D;</a>
+				<a th:href="@{/tienda/neg/{nombre}(nombre=${tienda.nombre})}"class="boton_4">&#x1F44E;</a>
 			</div>
 			<div>
 				<span>Mensajes:</span>
