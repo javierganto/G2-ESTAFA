@@ -22,11 +22,11 @@ public class MensajeService {
 		mensajerepository.saveAndFlush(m);
 	}
 
-	public void delete(String autor) {
-		mensajerepository.deleteById(autor);
+	public void delete(Integer id) {
+		mensajerepository.deleteById(id);
 	}
-	public Mensaje getById(String autor) {
-		return mensajerepository.getOne(autor);
+	public Mensaje getById(Integer id) {
+		return mensajerepository.getOne(id);
 	}
 
 
