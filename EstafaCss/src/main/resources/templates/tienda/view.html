@@ -92,10 +92,7 @@
 			<div>
 				<span>Mensajes:</span>
 			</div>
-			<div th:switch="${mensaje.id}">
-            <h1 th:case="null">Nuevo Mensaje</h1>
-            <h1 th:case="*">Editando Mensaje</h1>
-        </div>
+			
 			<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
 			<input th:if="*{id}" type="hidden" id="id" th:field="*{id}">
 			<input type="hidden" id="tienda.nombre" th:field="*{tienda.nombre}">
