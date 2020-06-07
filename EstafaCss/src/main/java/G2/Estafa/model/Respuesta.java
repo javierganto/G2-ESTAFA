@@ -14,7 +14,7 @@ public class Respuesta{
 	@GeneratedValue
 	private String autor;
 	private String contenido;
-	private boolean validez;
+	private int validez;
 	private double valoracion;
 	
 	@ManyToOne
@@ -28,22 +28,24 @@ public class Respuesta{
 	public String getAutor() {
 		return autor;
 	}
-	public boolean isValidez() {
+	public int isValidez() {
 		return validez;
 	}
-	public void setValidez(boolean validez) {
+	public void setValidez(int validez) {
 		this.validez = validez;
 	}
 	public double getValoracion() {
 		return valoracion;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
 		result = prime * result + ((contenido == null) ? 0 : contenido.hashCode());
-		result = prime * result + (validez ? 1231 : 1237);
+		result = prime * result + ((mensaje == null) ? 0 : mensaje.hashCode());
+		result = prime * result + validez;
 		long temp;
 		temp = Double.doubleToLongBits(valoracion);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -67,6 +69,11 @@ public class Respuesta{
 			if (other.contenido != null)
 				return false;
 		} else if (!contenido.equals(other.contenido))
+			return false;
+		if (mensaje == null) {
+			if (other.mensaje != null)
+				return false;
+		} else if (!mensaje.equals(other.mensaje))
 			return false;
 		if (validez != other.validez)
 			return false;

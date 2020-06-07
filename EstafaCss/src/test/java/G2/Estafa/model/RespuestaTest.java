@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class MensajeTest {
+public class RespuestaTest {
 	private Mensaje mensaje;
 	private static final int TITULOMAX = 25;
 	private static final int TITULOMIN = 1;

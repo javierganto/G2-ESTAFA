@@ -9,8 +9,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UsuarioTest {
-	private Usuario usuario;
+class ModeradorTest {
+	private Moderador moderador;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -32,41 +32,41 @@ class UsuarioTest {
 
 	@Test
 	void testGetNombre() {
-		assertTrue("El nombre no puede ser nulo", (usuario.getNombre()!=null));
+		assertTrue("El nombre no puede ser nulo", (moderador.getNombre()!=null));
 	}
 
 
 	@Test
 	void testGetNacimiento() {
-		assertTrue("Fecha incorrecta", (usuario.getNacimiento()!=null));
+		assertTrue("Fecha incorrecta", (moderador.getNacimiento()!=null));
 	}
 
 	
 
 	@Test
 	void testGetApellidos() {
-		assertTrue("El apellido no puede ser nulo", (usuario.getApellidos()!=null));
+		assertTrue("El apellido no puede ser nulo", (moderador.getApellidos()!=null));
 	}
 
 	
 
 	@Test
 	void testGetNick() {
-		assertTrue("El nick no puede ser nulo", (usuario.getNick()!=null));
+		assertTrue("El nick no puede ser nulo", (moderador.getNick()!=null));
 	}
 
 	
 
 	@Test
 	void testGetEmail() {
-		assertTrue("Email no valido", (usuario.getEmail()!=null));
+		assertTrue("Email no valido", (moderador.getEmail()!=null));
 	}
 
 	
 
 	@Test
 	void testGetPassword() {
-		assertTrue("Contraseña no valida", (usuario.getPassword()!=null));
+		assertTrue("Contraseña no valida", (moderador.getPassword()!=null));
 	}
 
 	
@@ -75,7 +75,7 @@ class UsuarioTest {
 
 	@Test
 	void testGetValoracion() {
-		assertTrue("La valoracion no puede ser nula", (usuario.getValoracion()>=0||usuario.getValoracion()<=10));
+		assertTrue("La valoracion no puede ser nula", (moderador.getValoracion()>=0||moderador.getValoracion()<=10));
 	}
 
 	
