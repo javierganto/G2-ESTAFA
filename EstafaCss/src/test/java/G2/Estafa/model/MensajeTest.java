@@ -59,11 +59,6 @@ public class MensajeTest {
 
 	
 
-	@Test
-	void testIsValidez() {
-		assertTrue("El mensaje es valido" ,mensaje.isValidez()==true);
-	}
-
 	
 
 
