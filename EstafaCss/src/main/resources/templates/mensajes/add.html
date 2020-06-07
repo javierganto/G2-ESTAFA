@@ -24,7 +24,7 @@
 				<label for="tienda">Tienda</label>
 				<select id="tienda" th:field=*{tienda}>
 					<option value="Seleccionar"></option>
-					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.nombre}" th:text="${tienda.nombre}">
+					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.id}" th:text="${tienda.nombre}">
 					</option>
 				
 				</select>
