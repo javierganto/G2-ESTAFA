@@ -2,7 +2,7 @@
 <html align="center">
 	<head>
 	<meta charset="ISO-8859-1">
-	<link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+	
 	</head>
 	<body  background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
 		
@@ -11,16 +11,8 @@
 		<h1 th:text="${usuario}"></h1>
 		</font>
 		<FONT SIZE=6>
-			<br><br><br><br><br><br>
-				<div>
-				<label for="valoracion">Valoracion:</label>
-				<span th:text="${usuario.valoracion}"></span>
-			</div>
-			<div>
-				<label for="valoracion">Numero de Denuncias:</label>
-				<span th:text="${usuario.denuncias}"></span>
-			</div>
-			<div>
+			<div><br><br><br><br><br><br>
+				
 				<label for="nombre">Nombre:</label>
 				<span th:text="${usuario.nombre}"></span>
 			</div>
@@ -44,7 +36,10 @@
 				<label for="password">Password:</label>
 				<span th:text="${usuario.password}"></span>
 			</div>
-			
+			<div>
+				<label for="valoracion">Valoracion:</label>
+				<span th:text="${usuario.valoracion}"></span>
+			</div>
 			<div>
 				<span>Mensajes:</span>
 			</div>
