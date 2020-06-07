@@ -3,10 +3,13 @@ package G2.Estafa.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
 
 @Entity
+
 public class Mensaje {
 	@Id
 	@GeneratedValue
@@ -60,7 +63,7 @@ public class Mensaje {
 	
 	@Override
 	public String toString() {
-		return "Mensaje [ contenido=" + contenido + ", validez=" + validez
+		return "Mensaje [ titulo=" + titulo + ", contenido=" + contenido
 				+ "]";
 	}
 	public Integer getId() {

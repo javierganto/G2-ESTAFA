@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import G2.Estafa.model.Tienda;
 import G2.Estafa.model.Usuario;
 import G2.Estafa.repository.UsuarioRepository;
 
@@ -53,6 +54,29 @@ public class UsuarioService {
 
         }
     }
+
+	public void neg(String nombre) {
+		 try {
+		        Usuario usuario = usuarioRepository.getOne(nombre);
+		        usuario.neg();
+		        usuarioRepository.saveAndFlush(usuario);
+		        }
+		        catch(Exception e){
+
+		        }
+		
+	}
+	public void pos(String nombre) {
+		 try {
+		        Usuario usuario = usuarioRepository.getOne(nombre);
+		        usuario.pos();
+		        usuarioRepository.saveAndFlush(usuario);
+		        }
+		        catch(Exception e){
+
+		        }
+		
+	}
 	
 	
 }

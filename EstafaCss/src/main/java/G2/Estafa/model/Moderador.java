@@ -23,7 +23,7 @@ public class Moderador extends Usuario{
 	private String apellidos;
 	private String email;
 	private String password;
-	private double valoracion;
+	private int valoracion;
 	
 	@OneToMany(mappedBy = "usuario")
 	List<Mensaje> usuariomensajes;
@@ -137,10 +137,10 @@ public class Moderador extends Usuario{
 	public String toString() {
 		return "Usuario" + ": " + nick ;
 	}
-	public double getValoracion() {
+	public int getValoracion() {
 		return valoracion;
 	}
-	public void setValoracion(double valoracion) {
+	public void setValoracion(int valoracion) {
 		this.valoracion = valoracion;
 	}
 	

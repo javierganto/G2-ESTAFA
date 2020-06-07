@@ -89,5 +89,20 @@ public class UsuarioController {
 		usuarioservice.delete(nick);
 		return "redirect:/moderadores";
 	}
+	
+	@RequestMapping("/usuarios/neg/{nombre}")
+    public String negativa(@PathVariable("nombre") String nombre) {
+        usuarioservice.neg(nombre);
+
+        return "redirect:/usuarios/view/{nombre}";
+    }
+	
+	@RequestMapping("/usuarios/pos/{nombre}")
+    public String positiva(@PathVariable("nombre") String nombre) {
+        usuarioservice.pos(nombre);
+
+        return "redirect:/usuarios/view/{nombre}";
+    }
+	
 
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import G2.Estafa.model.Mensaje;
 import G2.Estafa.model.Tienda;
@@ -65,22 +66,22 @@ public class MensajeController {
     }
 	
 	@RequestMapping("/mensajes/delete/{id}")
-	public String deletemensajes(@PathVariable("id") Integer id) {
-		mensajeservice.delete(id);
-		return "redirect:/mensajes";
-	}
+    public String deletemensajes(@PathVariable("id") Integer id) {
+        mensajeservice.delete(id);
+        return "redirect:/mensajes";
+    }
 	
 	@RequestMapping("/mensajes/neg/{id}")
     public String negativa(@PathVariable("id") Integer id) {
         mensajeservice.neg(id);
-
+        
         return "redirect:/mensajes/view/{id}";
     }
 	
 	@RequestMapping("/mensajes/pos/{id}")
     public String positiva(@PathVariable("id") Integer id) {
         mensajeservice.pos(id);
-
+        
         return "redirect:/mensajes/view/{id}";
     }
 	
