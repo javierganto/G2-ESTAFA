@@ -1,5 +1,8 @@
 package G2.Estafa.model;
 
+
+
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -8,8 +11,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RespuestaTest {
-
+public class RespuestaTest {
+	private Mensaje mensaje;
+	private static final int TITULOMAX = 25;
+	private static final int TITULOMIN = 1;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -26,44 +31,42 @@ class RespuestaTest {
 	void tearDown() throws Exception {
 	}
 
+	
+
 	@Test
-	void testHashCode() {
-		fail("Not yet implemented");
+	void testMensaje() {
+		assertTrue("El mensaje no puede ser vacio", (mensaje!=null));
+	}
+
+	@Test
+	void testGetTitulo() {
+		if(mensaje.getTitulo().length()>TITULOMAX||mensaje.getTitulo().length()<TITULOMIN) {
+			System.out.println( "El titulo debe ser superior a "+TITULOMIN+ "o inferior a "+TITULOMAX);
+		}
 	}
 
 	@Test
 	void testGetContenido() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetContenido() {
-		fail("Not yet implemented");
-	}
+		assertTrue("Contenido debe ser mayor a 1 caracter", (mensaje.getContenido().length()>1));
+		}
 
 	@Test
 	void testGetAutor() {
-		fail("Not yet implemented");
+		assertTrue("Debe haber un nombre de autor", (mensaje.getUsuario()!=null));
 	}
+
+	
+
+	
 
 	@Test
 	void testIsValidez() {
-		fail("Not yet implemented");
+		assertTrue("El mensaje es valido" ,mensaje.isValidez()==true);
 	}
 
-	@Test
-	void testSetValidez() {
-		fail("Not yet implemented");
-	}
+	
 
-	@Test
-	void testGetValoracion() {
-		fail("Not yet implemented");
-	}
 
-	@Test
-	void testEqualsObject() {
-		fail("Not yet implemented");
-	}
+	
 
 }
