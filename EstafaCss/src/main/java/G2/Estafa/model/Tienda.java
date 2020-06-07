@@ -10,10 +10,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Tienda {
- @Id 
+ @Id
+ @GeneratedValue
+private Integer id;
 private String nombre;
- 
- 
 private double valoracion=0;
 private String direccion;
 private String paginaWeb;
@@ -27,7 +27,13 @@ List<Mensaje> tiendamensajes;
 	
       }
 
+public Integer getId() {
+		return id;
+	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 public String getNombre() {
 	return nombre;
@@ -125,14 +131,6 @@ public boolean equals(Object obj) {
 
 
 
-	public void neg() {
-		valoracion--;
-	}
-
-
-	public void pos() {
-		valoracion++;
-	}
 
 
 }
