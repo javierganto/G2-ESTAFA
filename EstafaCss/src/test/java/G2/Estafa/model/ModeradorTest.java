@@ -1,6 +1,9 @@
 package G2.Estafa.model;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.Date;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -31,41 +34,53 @@ class ModeradorTest {
 
 	@Test
 	void testGetNombre() {
-		assertTrue("El nombre no puede ser nulo", (moderador.getNombre()!=null));
+		String nombre = "Jesus";
+		moderador.setNombre(nombre);
+		assertEquals("El nombre es "+nombre, moderador.getNombre(),nombre);
 	}
 
 
 	@Test
 	void testGetNacimiento() {
-		assertTrue("Fecha incorrecta", (moderador.getNacimiento()!=null));
+		Date nacimiento = new Date(25,12,0000);
+		moderador.setNacimiento(nacimiento);
+		assertEquals("La fecha de nacimiento es "+nacimiento,moderador.getNacimiento(),nacimiento);
 	}
 
 	
 
 	@Test
 	void testGetApellidos() {
-		assertTrue("El apellido no puede ser nulo", (moderador.getApellidos()!=null));
+		String apellidos = "De Nazaret";
+		moderador.setApellidos(apellidos);
+		assertEquals("El apellido es "+apellidos,moderador.getApellidos(),apellidos);
 	}
 
 	
 
 	@Test
 	void testGetNick() {
-		assertTrue("El nick no puede ser nulo", (moderador.getNick()!=null));
+		String nick = "jesucristo0";
+		moderador.setNick(nick);
+		assertEquals("El nick es "+nick,moderador.getNick(),nick);
 	}
 
 	
 
 	@Test
 	void testGetEmail() {
-		assertTrue("Email no valido", (moderador.getEmail()!=null));
+		String email = "jesucristo@gmail.com";
+		moderador.setEmail(email);
+		assertEquals("El email es "+email,moderador.getEmail(),email);
 	}
 
 	
 
 	@Test
 	void testGetPassword() {
-		assertTrue("Contraseña no valida", (moderador.getPassword()!=null));
+		String contraseña = "vivalostoros";
+		moderador.setPassword(contraseña);
+		assertEquals("La contraseña es "+contraseña,moderador.getPassword(),contraseña);
 	}
 
 	
@@ -74,7 +89,9 @@ class ModeradorTest {
 
 	@Test
 	void testGetValoracion() {
-		assertTrue("La valoracion no puede ser nula", (moderador.getValoracion()>=0));
+		int valoracion = 10;
+		moderador.setValoracion(valoracion);
+		assertEquals("La valoracion es "+valoracion,moderador.getValoracion(),valoracion);
 	}
 
 	
