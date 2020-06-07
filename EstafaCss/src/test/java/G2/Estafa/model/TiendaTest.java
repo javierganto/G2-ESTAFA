@@ -1,5 +1,6 @@
 package G2.Estafa.model;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
@@ -27,39 +28,47 @@ class TiendaTest {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testTienda() {
-		assertTrue("La tienda no debe estar vacia", tienda!=null);
-	}
 
 	@Test
 	void testGetNombre() {
-		assertTrue("La tienda debe tener nombre", tienda.getNombre()!=null);
+		String nombre = "Amazon";
+		tienda.setNombre(nombre);
+		assertEquals("El nombre es "+nombre, tienda.getNombre(),nombre);
 	}
 
 	@Test
 	void testGetValoracion() {
-		assertTrue("La tienda tiene que tener una valoracion", tienda.getValoracion()>=0);
+		int valoracion = 9;
+		tienda.setValoracion(valoracion);
+		assertEquals("La valoracion es "+valoracion,tienda.getValoracion(),valoracion);
 	}
 
 	@Test
 	void testGetDireccion() {
-		assertTrue("La tienda tiene que tener una direccion", tienda.getDireccion()!=null);
+		String direccion = "Las Rozas, Madrid";
+		tienda.setDireccion(direccion);
+		assertEquals("La direccion es "+direccion,tienda.getDireccion(),direccion);
 	}
 
 	@Test
 	void testGetPaginaWeb() {
-		assertTrue("La tienda debe tener pagina web", tienda.getPaginaWeb()!=null);
+		String web = "amazon.es";
+		tienda.setPaginaWeb(web);
+		assertEquals("La pagina web es "+web,tienda.getPaginaWeb(),web);
 	}
 
 	@Test
 	void testGetTipo_Producto() {
-		assertTrue("La tienda debe tener producto", tienda.getTipo_Producto()!=null);
+		String producto = "electronica";
+		tienda.setTipo_Producto(producto);
+		assertEquals("El tipo de producto es "+producto,tienda.getTipo_Producto(),producto);
 	}
 
 	@Test
 	void testGetContacto() {
-		assertTrue("La tienda tiene que tener un contacto", tienda.getContacto()!=null);
+		String contacto = "amazon@amazon.es";
+		tienda.setContacto(contacto);
+		assertEquals("El contacto es "+contacto,tienda.getContacto(),contacto);
 	}
 
 }
