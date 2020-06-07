@@ -91,12 +91,14 @@
 			<br>
 			<div>
 				<span>Mensajes:</span>
-				<div th:switch="${mensaje.id}">
-			
-		</div>
-		<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
+			</div>
+			<div th:switch="${mensaje.id}">
+            <h1 th:case="null">Nuevo Mensaje</h1>
+            <h1 th:case="*">Editando Mensaje</h1>
+        </div>
+			<form th:action="@{/mensajes/save}" method="post" th:object="${mensaje}">
 			<input th:if="*{id}" type="hidden" id="id" th:field="*{id}">
-			
+			<input type="hidden" id="tienda.nombre" th:field="*{tienda.nombre}">
 			<div>
 				<label for="titulo">Titulo</label>
 				<input type="text" nick="titulo" th:field="*{titulo}">
@@ -107,12 +109,7 @@
 			</div>
 			<div>
 				<label for="tienda">Tienda</label>
-				<select id="tienda" th:field=*{tienda}>
-					<option value="Seleccionar"></option>
-					<option th:each= "tienda : ${listaTiendas}" th:value="${tienda.nombre}" th:text="${tienda.nombre}">
-					</option>
-				
-				</select>
+				<input type="text" nick="tienda" th:field="*{tienda.nombre}" th:disabled="*{tienda.nombre}">
 			</div>
 			<div>
 				<label for="usuario">Usuario</label>
@@ -126,7 +123,6 @@
 				<input type="submit" value="Enviar">
 			</div>
 		</form>
-			</div>
 			</br>
 			</font>
            
@@ -136,5 +132,3 @@
     
 
 </html>
-
-
