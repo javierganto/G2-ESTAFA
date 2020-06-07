@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class MensajeTest {
 	private Mensaje mensaje;
 	private static final int TITULOMAX = 25;
-	private static final int TITULOMIN = 25;
+	private static final int TITULOMIN = 1;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -35,7 +35,7 @@ public class MensajeTest {
 
 	@Test
 	void testMensaje() {
-		assertTrue("El mensaje no puede ser vacio", (mensaje==null));
+		assertTrue("El mensaje no puede ser vacio", (mensaje!=null));
 	}
 
 	@Test
