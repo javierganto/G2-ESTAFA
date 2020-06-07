@@ -2,6 +2,7 @@ package G2.Estafa.model;
 
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
@@ -12,8 +13,7 @@ import org.junit.jupiter.api.Test;
 
 public class MensajeTest {
 	private Mensaje mensaje;
-	private static final int TITULOMAX = 25;
-	private static final int TITULOMIN = 1;
+	private Usuario usuario;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -31,30 +31,25 @@ public class MensajeTest {
 	}
 
 	@Test
-	void testMensaje() {
-		assertTrue("El mensaje no puede ser vacio", (mensaje.getContenido()!=null));
-	}
-
-	@Test
 	void testGetTitulo() {
-		if(mensaje.getTitulo().length()>TITULOMAX||mensaje.getTitulo().length()<TITULOMIN) {
-			System.out.println( "El titulo debe ser superior a "+TITULOMIN+ "o inferior a "+TITULOMAX);
-		}
+		String titulo = "El cristianismo";
+		mensaje.setTitulo(titulo);
+		assertEquals("El titulo es "+titulo,mensaje.getTitulo(),titulo);
 	}
 
 	@Test
 	void testGetContenido() {
-		assertTrue("Contenido debe ser mayor a 1 caracter", (mensaje.getContenido().length()>1));
+		String contenido = "Hola me llamo carlos";
+		mensaje.setContenido(contenido);
+		assertEquals("El contenido es "+contenido,mensaje.getContenido(),contenido);
 	}
 
-	@Test
-	void testGetAutor() {
-		assertTrue("Debe haber un nombre de autor", (mensaje.getUsuario()!=null));
-	}
-
+	
 	@Test
 	void testIsValidez() {
-		assertTrue("El mensaje es valido" ,mensaje.getValidez()>=0);
+		int validez = 1;
+		mensaje.setValidez(validez);
+		assertEquals("La validez es "+validez, mensaje.getValidez(),validez);
 	}
 
 }
