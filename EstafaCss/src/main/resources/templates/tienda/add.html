@@ -6,7 +6,7 @@
     </head>
     <body background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461%22%3E"><font color="002B87">
         <FONT SIZE=15>
-        <div th:switch="${tienda.nombre}">
+        <div th:switch="${tienda.id}">
             <h1 th:case="null">Nueva tienda</h1>
             <h1 th:case="">Editando tienda</h1>
         </div>
@@ -15,7 +15,7 @@
         <br><br><br><br><br><br>
 
         <form th:action="@{/tienda/save}" method="post" th:object="${tienda}">
-            <input th:if="*{nombre}" type="hidden" nick="nombre" th:field="*{nombre}">
+            <input th:if="*{id}" type="hidden" nick="id" th:field="*{id}">
             <div>
                 <label for="nombre">Nombre</label>
                 <input type="text" nick="nombre" th:field="*{nombre}">
