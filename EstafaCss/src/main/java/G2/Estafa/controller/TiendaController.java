@@ -11,13 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import G2.Estafa.model.Mensaje;
 import G2.Estafa.model.Tienda;
+import G2.Estafa.model.Usuario;
 import G2.Estafa.repository.TiendaRepository;
+import G2.Estafa.service.MensajeService;
 import G2.Estafa.service.TiendaService;
+import G2.Estafa.service.UsuarioService;
 //import G2.Estafa.service.UsuarioService;
 @Controller
 public class TiendaController {
 	@Autowired
 	TiendaService tiendaservice;
+	
+	@Autowired
+	MensajeService mensajeservice;
+	
+	@Autowired
+	UsuarioService usuarioservice;
 	
 	
 	@RequestMapping("/tienda")
@@ -42,11 +51,6 @@ public class TiendaController {
 		tiendaservice.save(t);
 		return "redirect:/tienda";
 	}
-	@RequestMapping("/tienda/edit/{nombre}")
-	public String editTienda(@PathVariable("nombre") String nombre, Model model) {
-		model.addAttribute("Tienda", tiendaservice.getById(nombre));
-		return "tienda/add";
-	}
 	
 	@RequestMapping("/tienda/view/{nombre}")
     public String viewtiendas(@PathVariable("nombre") String nombre, Model model) {
@@ -55,7 +59,24 @@ public class TiendaController {
         Mensaje mensaje = new Mensaje();
         mensaje.setTienda(tienda);
         model.addAttribute("mensaje", mensaje );
+		model.addAttribute("listausuarios", usuarioservice.getAll());
         return "tienda/view";
+    }
+	
+	
+	
+	@RequestMapping("/tienda/neg/{nombre}")
+    public String negativa(@PathVariable("nombre") String nombre) {
+        tiendaservice.neg(nombre);
+
+        return "redirect:/tienda/view/{nombre}";
+    }
+	
+	@RequestMapping("/tienda/pos/{nombre}")
+    public String positiva(@PathVariable("nombre") String nombre) {
+        tiendaservice.pos(nombre);
+
+        return "redirect:/tienda/view/{nombre}";
     }
 	
 
