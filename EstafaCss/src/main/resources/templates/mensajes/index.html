@@ -14,11 +14,11 @@
 			<tbody>
 			<tr th:each="p : ${ListaMensajes}">
 				
-				<td th:text="${p.autor}"></td>
+				<td th:text="${p.usuario}"></td>
 				
 				<td th:text="${p.titulo}"></td>
 				
-				<td> <a th:href="@{/mensajes/view/{autor}(autor=${p.autor})}">Ver</a> <a th:href="@{/mensajes/edit/{autor}(autor=${p.autor})}">Editar</a> <a th:href="@{/mensajes/delete/{autor}(autor=${p.autor})}">Borrar</a>
+				<td> <a th:href="@{/mensajes/view/{usuario}(usuario=${p.usuario})}">Ver</a> <a th:href="@{/mensajes/edit/{usuario}(usuario=${p.usuario})}">Editar</a> <a th:href="@{/mensajes/delete/{usuario}(usaurio=${p.usuario})}">Borrar</a>
 			
 			</tr>
 			</tbody>
