@@ -1,7 +1,6 @@
 package G2.Estafa.model;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -75,7 +74,7 @@ class ModeradorTest {
 
 	@Test
 	void testGetValoracion() {
-		assertTrue("La valoracion no puede ser nula", (moderador.getValoracion()>=0||moderador.getValoracion()<=10));
+		assertTrue("La valoracion no puede ser nula", (moderador.getValoracion()>=0));
 	}
 
 	
