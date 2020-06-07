@@ -5,13 +5,14 @@
 <html lang="es" >
 <head>
     
-    <link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
+    
 	
     
     <!-- ******* cabezera ******* -->
     <meta charset="UTF-8">
     <title>ESTAFA</title>
     <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    <link rel="shortcut icon" th:href="@{/css/favicon.jpg}">
    </head> 
     
     <body>
@@ -57,6 +58,8 @@
       
       
     </header>
+    <div class="wrapper">
+        <section>
     <br><br><br><br><br><br><br><br><br>
     <FONT SIZE=6>
      <form align="center" th:action="@{/usuarios/save}" method="post" th:object="${usuario}">

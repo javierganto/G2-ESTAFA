@@ -30,7 +30,7 @@ public class MensajeController {
 	@RequestMapping("/mensajes")
 	public String listadomensajes(Model model) {
 		List<Mensaje> mensaje = mensajeservice.getAll();
-		
+		model.addAttribute("listausuarios", usuarioservice.getAll());
 		model.addAttribute("ListaMensajes",mensaje);
 		
 		return "mensajes/index";
@@ -48,16 +48,16 @@ public class MensajeController {
 		return "redirect:/mensajes";
 	}
 	@RequestMapping("/mensajes/edit/{id}")
-	public String editusmensaje(@PathVariable("id") String autor, Model model) {
-		model.addAttribute("usuario", mensajeservice.getById(autor));
+	public String editusmensaje(@PathVariable("id") Integer id, Model model) {
+		model.addAttribute("usuario", mensajeservice.getById(id));
 		model.addAttribute("listaUsuarios", usuarioservice.getAll());
 		model.addAttribute("listaTiendas", tiendaservice.getAll());
 		return "mensajes/add";
 	}
 	
-	@RequestMapping("/mensajes/delete/{nick}")
-	public String deletemensajes(@PathVariable("autor") String autor) {
-		mensajeservice.delete(autor);
+	@RequestMapping("/mensajes/delete/{id}")
+	public String deletemensajes(@PathVariable("id") Integer id) {
+		mensajeservice.delete(id);
 		return "redirect:/mensajes";
 	}
 	

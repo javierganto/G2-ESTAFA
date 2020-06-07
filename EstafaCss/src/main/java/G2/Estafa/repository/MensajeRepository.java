@@ -8,7 +8,7 @@ import G2.Estafa.model.Mensaje;
 
 
 
-public interface MensajeRepository extends JpaRepository<Mensaje, String>{
+public interface MensajeRepository extends JpaRepository<Mensaje, Integer>{
 
 	
 

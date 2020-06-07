@@ -1,27 +1,73 @@
 <!DOCTYPE html>
-<html align="center">
-	<head>
-	<meta charset="ISO-8859-1">
-	<title>Lista Usuarios</title>
-	</head>
-	<body  background="https://k39.kn3.net/taringa/3/4/4/5/4/6/0/em0otions10/567.jpg?9461">
-	<link rel="shortcut icon" th:href="@{/css/favicon.jpg}">	
-	<font color="002B87">
-	<FONT SIZE=15>
-	<h1>Usuarios</h1>
-	</FONT>
-	<FONT SIZE=6>
-	<br><br><br><br><br><br>
-	<table align="center">
+<html lang="es">
+<head >
+    
+    <link rel="shortcut icon" href="@{/css/favicon.jpg}">
 	
-	<thead>
-	<tr><td>Nick</td><td>Veces denunciado</td></tr>
+    
+    <!-- ******* cabezera ******* -->
+    <meta charset="UTF-8">
+    <title>ESTAFA</title>
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    
+ 
+    
+    </head>
+<body>
+  
+ <!-- ******* VIDEO FONDO ******* -->
+<div class="contenido__video">
+     
+  <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="images/artesano.png">
+   <source th:src="@{/css/Anonymous%20-%20Donning%20the%20Digital%20Mask%20-%20HD%20Animation.mp4}">
+  </video>
+ </div>
+ 
+ <!-- Agrega tu código desde aquí -->
+ 
+      <header class="header2">
+        <div class="wrapper">
+        
+    
+        <nav>
+             <a th:href="@{/}">&nbsp INICIO&nbsp&nbsp&nbsp</a>
+            
+            
+            <a th:href="@{/tienda}">&nbsp TIENDAS &nbsp&nbsp</a>
+            
+            
+            
+        
+        
+        </nav>
+        <div align="left"><img src="https://i.ibb.co/tY9Z9Fh/ESTAFALOGO.png" width="190" height="100"></div>
+        
+        </header>
+    
+    <div class="wrapper">
+        <section>
+                
+            
+           <center>
+           <br><br><br><br><br><br><br><br><br><br><br>
+           <FONT SIZE=5>
+	<table align="center" style="color: white;">
+	
+	
+	<thead >
+	<tr style="color: #00E0FF"><td>Nick&nbsp&nbsp</td><td><td>&nbspVeces denunciado&nbsp</td></tr>
+	
 	</thead>
 	<tbody>
+	
 	<tr th:each="p : ${ListaUsuarios}">
+	
 	<td th:text= "${p.nick}"></td>
-	<td th:text="${p.denuncias}"></td>
-	<td> <a th:href="@{/usuarios/denun/{nick}(nick=${p.nick})}">denunciar</a>
+	
+	<td></td>
+	<td align="center" th:text="${p.denuncias}"></td>
+	<td> <a th:href="@{/usuarios/denun/{nick}(nick=${p.nick})}"class="boton_4">denunciar</a>
+	<br><br><br><br>
 	</tr>
 	</tbody>
 	</table>
@@ -29,3 +75,9 @@
 	</font>
 	</body>
 </html>
+
+
+
+
+
+
